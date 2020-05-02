@@ -1,1 +1,60 @@
 \section{Cutoff for high energy astro-physical neutrinos}
+\begin{enumerate}[label=(\alph*)]
+   \item Determine the energy $E_\nu$
+
+      The neutrinos have the following 4-momenta
+      \begin{align*}
+         p_1 &= (m_\nu, 0, 0, 0)  \\
+         p_2 &= (\sqrt{p^2 + m_\nu^2}, 0, 0, p)
+      \end{align*}
+      To activate the scattering process, one needs $s = m_Z^2$.  LHS can be written as
+      \begin{align*}
+         s &= (p_1 + p_2)^2 \\
+           &= (m_\nu + \sqrt{p^2 + m_\nu^2}, 0, 0, p)^2 \\
+           &= 2m_\nu^2 +2m_\nu \sqrt{p^2 + m_\nu^2} \\
+           &\approx 2 m_\nu p
+           \stackrel{!}= m_Z^2
+      \end{align*}
+      Thus
+      \begin{align}
+         E \approx p = m^2_Z / 2m_\nu =  \SI{41.6}{\tera \eV}
+      \end{align}
+   \item Estimate the mean free path $l$
+      \begin{align*}
+         l &\approx (\sigma_{\nu \overline{\nu}} n_\nu )^{-1} \\
+           &= (\SI{1.5e-31}{\cm \tothe{2}} \cdot \SI{55}{\cm \tothe{-3}})^{-1} \\
+           &= \SI{1.2e29}{\cm}  \\
+           &= \SI{3.9e12}{\parsec} = \SI{3.9}{\tear \parsec}
+      \end{align*}
+   \item Find expression for $E_3$ and what is its minimal and maximal values? Can the reaction occur again for the outgoing neutrinos with largest possible energy?
+
+   We can write out the momenta as
+   \begin{align*}
+      p_1 &= (E_\nu, 0,0, \sqrt{E_\nu^2 - m_\nu^2}) \\
+      p_2 &= (m_\nu,0,0,0) \\
+      p_3 &= (E_3, 0, \sin\theta p_3, \cos\theta p_3)
+   \end{align*}
+   Following the hint to find out $p_4$ (equivalent to 4- momentum conservation)
+   \begin{align*}
+      t = (p_2 - p_3)^2 &= (p_4 - p_2)^2 \\
+      (E_\nu - E_3, 0, -\sin\theta p_3, \sqrt{E_\nu^2 - m_\nu^2} - \cos\theta p_3)^2 &= (E_4 - m_\nu, \pmb{p}_4)^2 \\
+      (E_\nu - E_3)^2 - \sin^2\theta p_3^2 - (E_\nu - \cos\theta p_3)^2 &= E_4^2 - 2 m_\nu E_4  - E_4^2 + \order{m_\nu^2} \\
+      \Rightarrow E_4 &= \frac{E_\nu E_3}{m_\nu} (1-\cos\theta)
+   \end{align*}
+   From energy conservation
+   \begin{align}
+      E_3 &= E_\nu - E_4 \notag \\
+          &= E_\nu - \frac{E_\nu E_3}{m_\nu} (1-\cos\theta) \notag \\
+          &= \frac{E_\nu}{1 + \frac{E_\nu}{m_\nu} (1-\cos\theta)}
+   \end{align}
+   As function of scattering angle, its max and min values are
+   \begin{align}
+      \max(E_3) &= E_\nu \\
+      \min(E_3) &\approx m_\nu/2
+   \end{align}
+   Since in the case of maximal $E_3$, the neutrino doesn't lose energy in scattering, the process can occur again (and again).
+\item
+   Is there also a cutoff for neutrinos?
+
+   No, since in principle it is possible for the neutrinos to scatter without losing energy.
+\end{enumerate}
