@@ -1,1 +1,127 @@
 \section{Friedmann-Lemaitre-Robertson-Walker metric}
+      \begin{equation}
+         ds^2 = -dt^2 + a(t)^2 [ \frac{dr^2}{1-\kappa r^2}+ r^2(d\theta^2+\sin^2{\theta}d\phi^2) ]
+      \end{equation}
+\begin{enumerate}[label=(\alph*)]
+	\item 
+		\begin{equation*}
+		g_{\mu\nu} = 
+			\begin{pmatrix}
+			-1 	&  & &  \\
+				& \frac{a^2}{1-\kappa r^2} & & \\
+				& 	 & a^2 r^2 & \\
+				& 	 & & a^2 r^2 \sin^2{\theta} 
+			\end{pmatrix}		
+		\end{equation*}
+		\begin{equation*}
+		g^{\mu\nu} = 
+			\begin{pmatrix}
+			-1 	&  & &  \\
+				& \frac{1-\kappa r^2}{a^2} & & \\
+				& 	 & \frac{1}{a^2 r^2} & \\
+				& 	 & & \frac{1}{a^2 r^2 \sin^2{\theta}}
+			\end{pmatrix}
+		\end{equation*}
+	\begin{enumerate} [label=(\roman*)]
+	Note that:
+	\item one can write $g_{ii} = a^2 f_{ii}$, where
+		\begin{align*}
+		f_{11} &= \frac{1}{1-\kappa r^2} \\
+		f_{22} &= r^2 \\
+		f_{33} &= r^2 \sin^2{\theta} 
+		\end{align*}		
+	\item $g^{\mu\mu}=(g_{\mu\mu})^{-1}$ and $f^{ii}=(f_{ii})^{-1}$. 
+	\item $g_{33}=g_{22}\sin^2{\theta}$.
+	\end{enumerate}
+	\item 
+		\begin{align*}
+		\Gamma^\lambda_{\mu\nu}  & = g^{\lambda\rho}\Gamma_{\rho\mu\nu} \\
+					    & = \frac{1}{2} g^{\lambda\rho} ( \partial_\nu g_{\rho\mu} + \partial_\mu g_{\rho\nu} - \partial_\rho g_{\mu\nu} ) 
+		\end{align*}
+	For $\lambda=0$, $\mu=\nu=1$,
+		\begin{align*}
+		\Gamma^0_{11}  & = \frac{1}{2} g^{0\rho} ( \partial_1 g_{\rho1} + \partial_1 g_{\rho1} - \partial_\rho g_{11} ) 	\\
+		\end{align*}
+	$g_{\mu\nu}$ is symmetric, only $g_{00},g_{11},g_{22},g_{33}$ is nonvanishing,\\
+		\begin{align*}
+		\Gamma^0_{11}  & = \frac{1}{2} g^{00} ( \partial_1 g_{01} + \partial_1 g_{01} - \partial_0 g_{11} )\\
+	& =  	\frac{1}{2} (-1) (- \partial_t (\frac{a^2}{1-\kappa r^2})) \\
+	& = \frac{a \dot{a}}{1-\kappa r^2}
+		\end{align*}
+	For $\lambda=1$, $\mu=\nu=1$,
+		\begin{align*}
+		\Gamma^1_{11}  	& = \frac{1}{2} g^{11} ( \partial_1 g_{11} + \partial_1 g_{11} - \partial_1 g_{11} ) 	\\
+						& = \frac{1}{2} g^{11} \partial_1 g_{11} \\
+ 						& = \frac{1}{2} ( \frac{1-\kappa r^2}{a^2} )(\partial_r  \frac{a^2}{1-\kappa r^2}) \\
+ 						& = \frac{1}{2} ( \frac{1-\kappa r^2}{a^2} )(-2\kappa r)(\frac{a^2}{(1-\kappa r^2)^2})\\
+ 						& = \frac{\kappa r}{1-\kappa r^2}
+		\end{align*}
+	For $\lambda=0$, $\mu=\nu=2$,
+		\begin{align*}
+		\Gamma^0_{22}  	& = \frac{1}{2} g^{00} ( \partial_2 g_{02} + \partial_2 g_{02} - \partial_0 g_{22} ) 	\\
+						& = \frac{1}{2} g^{00}(- \partial_0 g_{22}) \\
+						& = (-1)(\frac{1}{2})(-\partial_t a^2 r^2) \\
+						& = \frac{1}{2}(2a \dot{a} r^2 \sin^2{\theta}) = a \dot{a}r^2
+		\end{align*}
+	For $\lambda=0$, $\mu=\nu=3$,
+		\begin{align*}
+		\Gamma^0_{33}  	& = \frac{1}{2} g^{00} ( \partial_3 g_{03} + \partial_3 g_{03} - \partial_0 g_{33} ) 	\\
+						& = \frac{1}{2} g^{00}(- \partial_0 g_{33}) \\
+						& = \frac{1}{2} g^{00}(- \partial_t (g_{22}\sin^2{\theta})) \\
+						& =a \dot{a}r^2 \sin^2{\theta}
+		\end{align*}		
+	For $\lambda=\nu=i$, $\mu=0$,
+		\begin{align*}
+		\Gamma^i_{0i}  	& = \frac{1}{2} g^{ii} ( \partial_0 g_{ii} + \partial_i g_{i0} - \partial_i g_{0i} ) 	\\
+						& = \frac{1}{2} (\frac{1}{a(t)^2f_{ii}} (\partial_t(a(t)^2f_{ii})) )\\
+						& = \frac{1}{2} \frac{2a\dot{a}}{a^2} \\
+						& = \frac{\dot{a}}{a}
+		\end{align*}		
+	For $\lambda=1$, $\mu=\nu=2$,
+		\begin{align*}
+		\Gamma^1_{22}  	& = \frac{1}{2} g^{11} ( \partial_2 g_{12} + \partial_2 g_{12} - \partial_1 g_{22}) 	\\
+						& = \frac{1}{2} g^{11} (- \partial_r g_{22}) \\
+						& =	\frac{1}{2} (\frac{1-\kappa r^2}{a^2} )(-\partial_r (a^2 r^2)) \\
+						& = \frac{1}{2} (1-\kappa r^2)(-2r) \\
+						& = -r(1-\kappa r^2)
+		\end{align*}		
+	For $\lambda=1$, $\mu=\nu=3$,
+		\begin{align*}
+		\Gamma^1_{33}  	& = \frac{1}{2} g^{11} ( \partial_3 g_{13} + \partial_3 g_{13} - \partial_1 g_{33}) 	\\
+						& = \frac{1}{2} g^{11} (- \partial_r g_{22}\sin^2{\theta})\\
+						& = \frac{1}{2} g^{11} (- \partial_r g_{22}) \sin^2{\theta} \\
+						& = \sin^2{\theta} \Gamma^1_{22}\\
+						& = -r(1-\kappa r^2)\sin^2{\theta}
+		\end{align*}		
+	For $\lambda=\nu=2$, $\mu=1$,
+		\begin{align*}
+		\Gamma^2_{12}  	& = \frac{1}{2} g^{22} ( \partial_1 g_{22} + \partial_2 g_{12} - \partial_2 g_{12}) 	\\
+						& = \frac{1}{2} \frac{1}{a^2 r^2}  \partial_r (a^2 r^2 )\\
+						& = \frac{1}{2} \frac{1}{a^2 r^2} 2a^2 r \\
+						& =  \frac{1}{r}
+		\end{align*}		
+	For $\lambda=\nu=3$, $\mu=1$,
+		\begin{align*}
+		\Gamma^3_{13}  	& = \frac{1}{2} g^{33} ( \partial_1 g_{33} + \partial_3 g_{13} - \partial_3 g_{13}) 	\\
+						& = \frac{1}{2} \frac{1}{a^2 r^2 \sin^2{\theta} }  \partial_r (a^2 r^2 \sin^2{\theta})\\
+						& = \frac{1}{2} \frac{1}{a^2 r^2 \sin^2{\theta}} 2a^2 r \sin^2{\theta}\\
+						& =  \frac{1}{r}
+		\end{align*}		
+	For $\lambda=\nu=3$, $\mu=2$,
+		\begin{align*}
+		\Gamma^3_{23}  	& = \frac{1}{2} g^{33} ( \partial_2 g_{33} + \partial_3 g_{32} - \partial_3 g_{23}) 	\\
+						& = \frac{1}{2} g^{33} (\partial_2 g_{33}) \\
+						& = \frac{1}{2} \frac{1}{a^2 r^2 \sin^2{\theta}} (\partial_\theta (a^2 r^2 \sin^2{\theta}))\\
+						& = \frac{1}{2} \frac{1}{a^2 r^2 \sin^2{\theta}} 2a^2 r^2  \sin{\theta}  \cos{\theta}\\
+						& = \frac{\cos{\theta}}{\sin{\theta}}
+		\end{align*}		
+	For $\lambda=2$, $\mu=\nu=3$,
+		\begin{align*}
+		\Gamma^2_{33}  	& = \frac{1}{2} g^{22} ( \partial_3 g_{23} + \partial_3 g_{23} - \partial_2 g_{33}) 	\\
+						& = \frac{1}{2} g^{22} (- \partial_2 g_{33}) \\
+						& = \frac{1}{2} g^{33} \sin^2{\theta} (- \partial_2 g_{33}) \\
+						& = -\sin^2{\theta}\Gamma^3_{23} \\
+						& = -\sin{\theta}\cos{\theta}
+		\end{align*}		
+\end{enumerate}
+
