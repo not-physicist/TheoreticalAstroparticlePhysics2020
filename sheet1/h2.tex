@@ -15,6 +15,7 @@
            &\approx 2 m_\nu p
            \stackrel{!}= m_Z^2
       \end{align*}
+      where higher order terms in $m_\nu$ are ignored.
       Thus
       \begin{align}
          E \approx p = m^2_Z / 2m_\nu =  \SI{41.6}{\tera \eV}
@@ -24,7 +25,8 @@
          l &\approx (\sigma_{\nu \overline{\nu}} n_\nu )^{-1} \\
            &= (\SI{1.5e-31}{\cm \tothe{2}} \cdot \SI{55}{\cm \tothe{-3}})^{-1} \\
            &= \SI{1.2e29}{\cm}  \\
-           &= \SI{3.9e12}{\parsec} = \SI{3.9}{\tear \parsec}
+           &= \SI{3.9e12}{\parsec} \\
+           &= \SI{3.9e6}{\mega \parsec}
       \end{align*}
    \item Find expression for $E_3$ and what is its minimal and maximal values? Can the reaction occur again for the outgoing neutrinos with largest possible energy?
 
@@ -34,7 +36,7 @@
       p_2 &= (m_\nu,0,0,0) \\
       p_3 &= (E_3, 0, \sin\theta p_3, \cos\theta p_3)
    \end{align*}
-   Following the hint to find out $p_4$ (equivalent to 4- momentum conservation)
+   Following the hint to find out $p_4$ (equivalent to $4$-momentum conservation)
    \begin{align*}
       t = (p_2 - p_3)^2 &= (p_4 - p_2)^2 \\
       (E_\nu - E_3, 0, -\sin\theta p_3, \sqrt{E_\nu^2 - m_\nu^2} - \cos\theta p_3)^2 &= (E_4 - m_\nu, \pmb{p}_4)^2 \\
@@ -53,8 +55,16 @@
       \min(E_3) &\approx m_\nu/2
    \end{align}
    Since in the case of maximal $E_3$, the neutrino doesn't lose energy in scattering, the process can occur again (and again).
+
+      \textcolor{blue}{
+         To our understanding, distinction between inelastic and elastic scattering is at whether the kinetic energy is conserved or not. If it is true, scattering of $\nu\bar{\nu}$ into $\nu\bar{\nu}$ is purely elastic, since the rest masses stay the same and  kinetic energy is conserved. On the sheet, the sentence confuses us: \textit{For the elastic channels it is clear that the high energy neutrino flux will be depleted.}
+   }
 \item
    Is there also a cutoff for neutrinos?
 
-   No, since in principle it is possible for the neutrinos to scatter without losing energy.
+   Yes, there is, if there is no high energy neutrino sources within the $l_{\nu\overline{\nu}}$. 
+
+   \textcolor{blue}{
+      P.S. Should we consider $t$-channel processes as well? If we need to consider it, then the cross section will be modified. (Maybe it is already included in $\sigma_{\nu\overline{\nu}}$.)
+   }
 \end{enumerate}
