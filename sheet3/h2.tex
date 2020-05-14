@@ -1,0 +1,97 @@
+\section{Accelerated Expansion in a de-Sitter Universe}
+\begin{equation}
+   \dd{s^2} = \dd{t^2} - \exp(2 H_{dS} t) \dd{\vec{x}^2}
+\end{equation}
+
+\begin{enumerate}[label=(\alph*)]
+   \item Determine the Riemann curvature tensor
+   
+      Set $H_\text{dS} = H$ throughout this assignment.
+      Curvature tensor $R$ has mass dimension $2$ because of two derivatives. To achieve this, only quantity we have is just $H^2$. We also know that $R_{\mu\nu\lambda \rho}$ is anti-symmetric in first and second pair of indices and symmetric under $(\mu, \nu) \leftrightarrow (\lambda, \rho)$. The only choice is then
+      \begin{equation}
+         R_{\mu\nu\lambda \rho} = H^2 (g_{\mu\rho} g_{\nu\lambda} - g_{\mu\lambda} g_{\nu\rho})
+      \end{equation}
+
+      To show this explicitely, first calculate christoffel symbols
+      \begin{equation}
+         \Gamma_{\nu\lambda}^{\mu} = \frac{1}{2} g^{\mu \rho} \left( \partial_\nu g_{\rho\lambda} + \partial_\lambda g_{\nu\rho} - \partial_\rho g_{\nu\lambda} \right)
+      \end{equation}
+      One important fact about the metric is that there is only time dependence and thus spatial derivatives always vanish.
+      \begin{align*}
+         \Gamma_{00}^{0} &= \frac{1}{2} g^{0 \rho} (\partial g_{\rho 0} + \partial_0 g_{0 \rho} - \partial_\rho g_{00}) \\ 
+                        &= 0 \\
+         \Gamma_{0i}^{0} &= \Gamma_{i0}^{0} = \frac{1}{2} \left( \partial_i g_{\rho 0} + \partial_0 g_{\rho i} - \partial_{\rho} g_{0i}  \right) \\
+                         &= \frac{1}{2} \partial_0 g_{0i} \\
+                         &= 0\\
+         \Gamma^{i}_{00} &= \frac{1}{2} g^{i\rho} (\partial_0 g_{\rho 0} + \partial_0 g_{\rho 0} - \partial_\rho g_{00}) \\
+                         &= 0 \\
+         \Gamma^{i}_{0j} &= \Gamma_{j0}^{i} = \frac{1}{2} g^{i \rho} \left( \partial_0 g_{\rho j} + \partial_j g_{\rho 0} - \partial_\rho g_{0j} \right) \\
+                         &= - \frac{1}{2} e^{-2Ht} \delta^{i\rho} \left( \partial_0 g_{\rho j} - \partial_\rho g_{0j} \right)  \\
+                         &= - \frac{1}{2} e^{-2Ht} \delta_j^i \partial_0 e^{2Ht} \\
+                         &= - H \delta_j^i  \\
+         \Gamma^{0}_{ij} &= \Gamma^{0}_{ji} = \frac{1}{2} g^{0\rho} \left( \partial_i g_{\rho j} + \partial_j g_{\rho i} - \partial_\rho g_{ij} \right) \\
+                         &= -\frac{1}{2} g^{0\rho} \partial_\rho g_{ij} \\
+                         &= \delta_{ij} H e^{2Ht} \\
+         \Gamma^{i}_{jk} &= 0
+      \end{align*}
+      Definition of curvature tensor
+      \begin{equation}
+         R_{\mu\nu \lambda \rho} = g_{\mu\sigma} \left( \partial_\lambda \Gamma^\sigma_{\nu\rho} - \partial_\rho \Gamma^{\sigma}_{\nu\lambda} + \Gamma^{\sigma}_{\kappa \lambda}\Gamma^{\kappa}_{\nu\rho} - \Gamma^{\sigma}_{\kappa \rho} \Gamma^{\kappa}_{\lambda \nu} \right)
+      \end{equation}
+      Because of mentioned symmetries, we split the tensor into two parts
+      \begin{equation*}
+         R_{\mu\nu \lambda \rho} = A_{\mu\nu\lambda \rho} - A_{\mu\nu\rho\lambda}
+      \end{equation*}
+
+      Now try to compute $A_{\mu\nu\lambda \rho}$
+      \begin{equation*}
+         A_{\mu\nu\lambda \rho} = g_{\mu\sigma} \partial_\lambda \Gamma^\sigma_{\nu\rho} + g_{\mu\sigma} \Gamma^{\sigma}_{\kappa \lambda}\Gamma^{\kappa}_{\nu\rho} = B + C
+      \end{equation*}
+      in which
+      \begin{align*}
+         B & = g_{\mu\sigma}\partial_\lambda \Gamma^{\sigma}{\nu\rho} \\
+           &= \left( \delta_{\mu 0} \delta_{\sigma}^0 - e^{2Ht} \delta_{\mu i} \delta^{i}_0 \right) \partial_\lambda \Gamma^\sigma_{\nu\rho} \\
+           &= \partial_\lambda \Gamma^0_{\nu\rho} \delta_{\mu 0} - e^{2Ht} \partial_\lambda \Gamma^i_{\nu\rho} \delta_{\mu i} \\
+           &= \delta_{\lambda 0} \left( \partial_0 \Gamma^{0}_{\nu\rho} \delta_{\mu 0} - e^{2Ht}\partial_0 \Gamma^i_{\nu\rho} \delta_{\mu i} \right) \\
+           &= \delta_{\mu 0}  \delta_{\nu i} \delta^i_{\rho} \delta_{\lambda 0} 2 H^2 e^{2Ht}
+      \end{align*}
+      and
+      \begin{align*}
+         C &= g_{\mu\sigma} \Gamma^{\sigma}{\kappa \lambda} \Gamma^{\kappa}_{\nu \rho} \\
+           &= \delta_{\mu 0} \Gamma^{0}_{i\lambda} \Gamma^{i}_{\nu\rho} - e^{2Ht} \delta_{\mu i} \Gamma^{i}_{\kappa \lambda} \Gamma^{\kappa}_{\nu\rho} \\
+           &= \delta_{\mu 0} \delta_{i\lambda} He^{2Ht} \left( \delta_{\nu 0} \Gamma^{i}_{0 \rho} + \delta_{\rho 0} \Gamma^{i}_{\nu 0} \right) - e^{2Ht} \delta_{\mu i} \left( \delta_{\mu 0} \Gamma^{i}_{0\lambda} +\delta_{\lambda 0} \Gamma^i_{\kappa 0} \right) \Gamma^{\kappa}_{\nu\rho} \\
+         C e^{-2Ht} &= - H^2 \delta_{\mu 0} \delta_{i \lambda} \left( \delta_{\nu 0} \delta^i_\rho + \delta_{\rho 0} \delta^i_\nu \right) + H \delta_{\mu i} \left( \delta_{\kappa 0}\delta^i_\lambda H + \delta_{\lambda 0} \delta^{i}_\kappa \right) \Gamma^\kappa_{\nu\rho} \\
+         C e^{-2Ht} &= - H^2 \delta_{\mu 0} \delta_{i \lambda} \left( \delta_{\nu 0} \delta^i_\rho + \delta_{\rho 0} \delta^i_\nu \right) + H \delta_{\mu i} \left( \Gamma^{0}_{\nu\rho} \delta^i_\lambda + \delta_{\lambda 0} \Gamma^{i}_{\nu \rho} \right) \\ 
+         C e^{-2Ht} &= - H^2 \delta_{\mu 0} \delta_{i \lambda} \left( \delta_{\nu 0} \delta^i_\rho + \delta_{\rho 0} \delta^i_\nu \right) + H^2 \delta_{\mu i} \left[ \delta^i_\mu \delta_{\nu j} \delta^j_\rho e^{2Ht} - \delta_{\lambda 0} \left( \delta_{\nu 0} \delta_{\nu 0} \delta^i_{\rho} + \delta_{\rho 0} \delta^i_\nu \right) \right] \\
+      \end{align*}
+      Thus 
+      \begin{align*}
+         A_{\mu\nu\rho\lambda}/(H e^{2Ht}) = &2\delta_{\mu 0} \delta_{\nu i} \delta^{i}_{\rho} \delta_{\lambda 0} + e^{2Ht} \delta_{\mu i} \delta_{\nu j} \delta^j_{\rho} \delta^{i}_\lambda - \delta_{\mu i } \delta_{\nu 0} \delta^i_\rho \delta_{0 \lambda} \\
+                                             &- \cancelto{}{\delta_{\mu i} \delta^i_{\nu}  \delta_{i \lambda} \delta^i_{\rho}} - \cancelto{}{\delta_{\mu 0} \delta_{\nu 0} \delta_{i \lambda} \delta^i_{\rho}} - \delta_{\mu 0}\delta^i_{\nu} \delta_{\rho0 0 }\delta_{i \lambda}
+      \end{align*}
+      Some of these terms get canceled because of symmtry in $\rho, \lambda$. In the end, we have
+      \begin{equation}
+         R_{\mu\nu\lambda \rho} = H^2 (g_{\mu\rho} g_{\nu\lambda} - g_{\mu\lambda} g_{\nu\rho})
+      \end{equation}
+   \item  Solve Einstein field equations
+      \begin{align*}
+         R_{\mu\nu} &= R^\lambda_{\mu \lambda \nu} \\
+                    &= g^{\alpha \lambda } R_{\alpha \mu \lambda \nu} \\
+                    &= H^2 g^{\alpha \lambda} (g_{\alpha \nu} g_{\mu \lambda} - g_{\alpha \lambda} g_{\mu\nu}) \\
+                    &= H^2 (\delta_{\mu\nu} - g_{\mu\nu}) \\
+         R &= g^{\mu\nu}R_{\mu\nu}\\
+                    &= H^2 (g^{\mu\nu}\delta_{\mu\nu} - 1) \\
+                                  &= -3 H^2 e^{-2Ht} \\
+         G_{\mu\nu} &= R_{\mu\nu} - \frac{1}{2} g_{\mu\nu}R \\
+                    &= H^2 (\delta_{\mu\nu} - g_{\mu\nu} + \frac{3}{2} g_{\mu\nu}e^{-2Ht}) \\
+                    & \stackrel{!}{=} 8 \pi G \Lambda g_{\mu\nu}
+      \end{align*}
+      For $00$ component, we get
+      \begin{align}
+         \frac{3}{2} H^2 e^{-2Ht} = 8\pi G \Lambda  > 0
+      \end{align}
+      For $ii$ component, we get
+      \begin{align}
+         H^2 \left(\frac{1}{2} e^{-2Ht} - 1 \right) = 8 \pi G \Lambda < 0
+      \end{align}
+\end{enumerate}
