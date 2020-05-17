@@ -11,8 +11,8 @@
       The number density is defines as
       \begin{align}
          n &= g_i \int \dd[3]{p} f(\vec{p}) \notag \\
-           &= \frac{g_i}{(2\pi)^3} \exp(\frac{\mu-m}{T}) \int \dd[3]{p} \exp(-\frac{|\vec{p}|^2}{2mT}) \notag\\
-           &= \frac{4 \pi g_i}{(2\pi)^3} \exp(\frac{\mu-m}{T}) \int \dd{|\vec{p}|} |\vec{p}|^2 \exp(-\frac{|\vec{p}|^2}{2mT}) \notag\\
+           &= \frac{g_i}{(2\pi)^3} \exp(\frac{\mu-m}{T}) \int \dd[3]{p} \exp(-\frac{p^2}{2mT}) \notag\\
+           &= \frac{4 \pi g_i}{(2\pi)^3} \exp(\frac{\mu-m}{T}) \int \dd{p} p^2 \exp(-\frac{p^2}{2mT}) \notag\\
            &= \frac{4 \pi g_i}{(2\pi)^3} \exp(\frac{\mu-m}{T}) \frac{\sqrt{\pi}}{2} (2mT)^{3/2} \notag\\
          n &= g_i \exp(\frac{\mu-m}{T}) \left( \frac{mT}{2\pi} \right)^{3/2} \label{math:n1}
       \end{align}
