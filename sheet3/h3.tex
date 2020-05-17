@@ -1,0 +1,99 @@
+\section{ Age of the universe for some toy cosmologies}
+Assumming we are using the $\Lambda$CDM model, the Friedman equation is as follows:
+\begin{align}
+	H^2 = \left( \frac{\dot{a}}{a}\right)^2 &= \frac{8\pi}{3} G \left( \rho_{mat} + \rho_{rad} + \rho_\Lambda + \rho_{curv}   \right) \notag \\
+	&=\frac{8\pi}{3} G \rho_c \left( \frac{\rho_{mat}}{\rho_c} + \frac{\rho_{rad}}{\rho_c} + \frac{\rho_\Lambda}{\rho_c} + \frac{\rho_{curv}}{\rho_c}   \right) \notag  \\
+	&=\frac{8\pi}{3} G \rho_c \left[ \Omega_{mat} \left( \frac{a_0}{a}\right)^3 + \Omega_{rad} \left( \frac{a_0}{a}\right)^4 + \Omega_{\Lambda} + \Omega_{curv}\left( \frac{a_0}{a}\right)^2 \right] 
+\end{align}
+where,
+\begin{align}
+\frac{8\pi}{3} G \rho_{curv} = -\frac{\kappa}{a^2} \\
+\rho_c = \frac{3}{8\pi G}H_0^2
+\end{align}
+\begin{enumerate}[label=(\alph*)]
+	\item  We are considering a spatially open $\kappa = -1$universe where the only non-vanishing energy densities are those from matter and curvature.
+\begin{align}
+\Omega_{mat} \ne 0, \> \Omega_{rad} = 0, \> \Omega_{curv} \ne 0, \> \Omega_{\Lambda} = 0 \\
+\Omega_{mat} +\Omega_{curv} = 1
+\end{align}
+Given these conditions, 
+\begin{align}
+	\left( \frac{\dot{a}}{a}\right)^2 &=\frac{8\pi}{3} G \rho_c \left[ \Omega_{mat} \left( \frac{a_0}{a}\right)^3 + \Omega_{curv}\left( \frac{a_0}{a}\right)^2 \right] \notag \\ 
+	(\dot{a})^2 &=\frac{8\pi}{3} G \rho_c \left[ \Omega_{mat} \left( \frac{a_0^3}{a}\right)  + \Omega_{curv} a_0^2 \right] 
+\end{align}
+let $a(t) = A(t)x$ with $A(t_0)=1$, which leads to  
+\begin{align}
+a_0 &= x, \notag\\ a(t) &= A(t) a_0
+\end{align}
+Substituting eq (3.7) to  eq (3.6)
+\begin{align*}
+	(\dot{A}a_0)^2 &=\frac{8\pi}{3} G \rho_c \left[ \Omega_{mat} \left( \frac{a_0^2}{A}\right)  + \Omega_{curv} a_0^2 \right]  \\
+	\dot{A}^2 &=\frac{8\pi}{3} G \rho_c \left[ \Omega_{mat} \left( \frac{1}{A}\right)  + \Omega_{curv}\right]  \\
+	\dot{A} &=\sqrt{\frac{8\pi}{3} G \rho_c \left[ \Omega_{mat} \left( \frac{1}{A}\right)  + \Omega_{curv}\right] }\\
+	\frac{dA}{dt} &=\sqrt{\frac{8\pi}{3} G \rho_c \left[ \Omega_{mat} \left( \frac{1}{A}\right)  + \Omega_{curv}\right] }\\
+	dt &= \frac{dA}{\sqrt{\frac{8\pi}{3} G \rho_c \left[ \Omega_{mat} \left( \frac{1}{A}\right)  + \Omega_{curv}\right] }}  \\
+\int_{0}^{t_0}dt  &= \int_0^{A(t_0)=1}dA \frac{1}{\sqrt{\frac{8\pi}{3} G \rho_c \left[ \Omega_{mat} \left( \frac{1}{A}\right)  + \Omega_{curv}\right] }}  \\
+\end{align*}
+\begin{align*}
+	t_0 &= \int_0^{1}dA \frac{1}{\sqrt{\frac{8\pi}{3} G \rho_c \left[ \Omega_{mat} \left( \frac{1}{A}\right)  + \Omega_{curv}\right] }}  \\
+	&= \int_0^{1}dA \frac{1}{\sqrt{\frac{8\pi}{3} G \rho_c \left[ \Omega_{mat} \left( \frac{1}{A}\right)  + 1 - \Omega_{mat} \right] }}  \\
+	&= \int_0^{1}dA \frac{1}{\sqrt{ H_0^2 \left[ (0.3)\left( \frac{1}{A}\right)  + 0.7 \right] }}  \\
+	&= \int_0^{1}dA \frac{1}{\sqrt{ (2.269 \cdot 10^{-18}s^{-1})^2 \left[ (0.3)\left( \frac{1}{A}\right)  + 0.7 \right] }}  \\
+	&= 3.5645 \cdot 10^{17}\SI{}{\second} \\
+	&= 11.3 \> \text{billion years}
+\end{align*}
+	\item  Now considering a different universe, spatially flat and with matter and dark energy left,
+\begin{align}
+\Omega_{mat} \ne 0, \> \Omega_{rad} = 0, \> \Omega_{curv} = 0, \> \Omega_{\Lambda} \ne 0 \\
+\Omega_{mat} +\Omega_{\Lambda} = 1
+\end{align}
+Starting with the continuity equation,
+\begin{align}
+	\dot{\rho_{\Lambda}} + 3 \frac{\dot{a}}{a}(\rho_{\Lambda}+P_{\Lambda}) &= 0 \notag \\
+	\dot{\rho_{\Lambda}} + 3 \frac{\dot{a}}{a} \rho_{\Lambda}(1+\omega) &= 0 \notag \\
+	\dot{\rho_{\Lambda}} &= -3 \frac{\dot{a}}{a} \rho_{\Lambda} (1+\omega) \notag \\
+	\frac{d\rho_{\Lambda}}{\rho_{\Lambda}} &= \frac{-3 (1+\omega)}{a}\frac{da}{dt} dt\notag \\ 
+%%%%%%%%%%%%%%%
+%	\ln(\frac{\rho_{\Lambda,0}}{\rho_{\Lambda,\text{initial}}}) &= -3 (1+\omega) \int^{a_0}_{a_\text{intial}}\frac{da}{a}\\
+%	\frac{\rho_{\Lambda,0}}{\rho_{\Lambda,\text{initial}}} &= \frac{a_0}{a_\text{initial}}e^{-3(1+\omega)}\\
+%	\rho_{\Lambda,0} &= \rho_{\Lambda,\text{initial}}\frac{a_0}{a_\text{initial}}e^{-3(1+\omega)}\\
+%where $\rho_{\Lambda,\text{initial}} > \rho_{\Lambda,0}$ for a freeze out scenario and   $\rho_{\Lambda,\text{initial}} < \rho_{\Lambda,0}$ for freeze in scenario.
+%%%%%%%%%%%%%%%
+	\ln(\frac{\rho_{\Lambda}}{\rho_{\Lambda,0}}) &= -3 (1+\omega) \int^{a}_{a_0}\frac{da}{a}\notag \\
+	\frac{\rho_{\Lambda}}{\rho_{\Lambda,0}} &= \frac{a}{a_0}e^{-3(1+\omega)}\notag \\
+	\rho_{\Lambda} &= \rho_{\Lambda,0}\frac{a}{a_0}e^{-3(1+\omega)}
+% I got different shit compare to:
+%http://universeinproblems.com/index.php/Solutions_of_Friedman_equations_in_the_Big_Bang_model#Problem_1:_matter_or_radiation_in_a_flat_Universe
+%the difference is due to differnt unit of a? if ln_a(stuff) -> e-fold shit?
+\end{align}
+Here, we have found the $\rho_{\Lambda}$'s dependence on the scale factor $a$.Plugging it back to the Friedmann equation.
+\begin{align}
+\left( \frac{\dot{a}}{a}\right)^2 &=  \frac{8\pi}{3} G \rho\notag \\
+						 &=  \frac{8\pi}{3} G (\rho_{m}+\rho_{\Lambda})\notag \\
+						 &=  \frac{8\pi}{3} G \rho_c \left( \Omega_m \left( \frac{a_0}{a}\right)^3 + \frac{\rho_{\Lambda}}{\rho_c} \right)\notag \\
+						 &=  \frac{8\pi}{3} G \rho_c \left( \Omega_m \left( \frac{a_0}{a}\right)^3 + \frac{\rho_{\Lambda,0}}{\rho_c }\frac{a}{a_0}e^{-3(1+\omega)}\right)\notag \\
+\left( \frac{\dot{a}}{a}\right)^2  &=  \frac{8\pi}{3} G \rho_c\left( 	\Omega_m \left( \frac{a_0}{a}\right)^3 + \Omega_{\Lambda}\frac{a_0}{a}e^{3(1+\omega)}	\right)
+\end{align}
+\item Now, just like how we did it in the previous scenario,
+\begin{align*}
+\left( \frac{\dot{a}}{a}\right)^2 	 &=  H_0^2 \left( 	\Omega_m \left( \frac{a_0}{a}\right)^3 + \Omega_{\Lambda}\frac{a_0}{a}e^{3(1+\omega)}	\right) \\
+\dot{a}^2 	 &=   H_0^2  \left( 	\Omega_m \left( \frac{a_0^3}{a}\right) + \Omega_{\Lambda}a_0ae^{3(1+\omega)}	\right) \\
+(\dot{A}a_0)^2 	 &=   H_0^2  \left( 	\Omega_m \left( \frac{a_0^2}{A}\right) + \Omega_{\Lambda}a_0^2 A e^{3(1+\omega)}	\right)\\
+\dot{A}^2 	 &=   H_0^2  \left( 	\Omega_m \left( \frac{1}{A}\right) + \Omega_{\Lambda}A e^{3(1+\omega)}	\right)\\
+\frac{dA}{dt} 	 &=   \sqrt{H_0^2  \left( 	\Omega_m \left( \frac{1}{A}\right) + \Omega_{\Lambda}A e^{3(1+\omega)}	\right)}\\
+t_0 &= \int^{1}_0 dA \frac{1}{\sqrt{H_0^2  \left( 	\Omega_m \left( \frac{1}{A}\right) + \Omega_{\Lambda}A e^{3(1+\omega)}	\right)}}\\
+	&= \int^{1}_0 dA \frac{1}{\sqrt{(2.269 \cdot 10^{-18}s^{-1})^2  \left( 0.27 \left( \frac{1}{A}\right) + 0.73 A e^{3(1+\omega)}	\right)}}
+\end{align*}
+For $\omega=-1.1$,
+\begin{align*}
+t_0 	&= \int^{1}_0 dA \frac{1}{\sqrt{(2.269 \cdot 10^{-18}s^{-1})^2  \left( 0.27 \left( \frac{1}{A}\right) + 0.73 A e^{3(1-1.1)}	\right)}}\\
+	&=4.31976\cdot10^{17} s\\
+	&=13.6979 \> \text{billion years}
+\end{align*}
+For $\omega=-0.9$,
+\begin{align*}
+t_0 	&= \int^{1}_0 dA \frac{1}{\sqrt{(2.269 \cdot 10^{-18}s^{-1})^2  \left( 0.27 \left( \frac{1}{A}\right) + 0.73 A e^{3(1-0.9)}	\right)}}\\
+	&=3.81096\cdot10^{17} s\\
+	&=12.0845 \> \text{billion years}
+\end{align*}
+\end{enumerate}
