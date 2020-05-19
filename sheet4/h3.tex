@@ -1,0 +1,92 @@
+\section{Equilibrium Recombination Temperature of Helium}
+\begin{enumerate}[label=(\alph*)]
+   \item Particles in equation $(4)$ are in chemical equilibrium, thus
+      \begin{equation}
+         \mu_{\He^{++}} + 2 \mu_{e^-} = \mu_{\He}
+      \end{equation}
+   \item Heuristically we assume that the particles are non-relativistic during recombination. Thus the number density follows the usual formular
+      \begin{align}
+         n_e &= g_e \left( \frac{m_e T}{2\pi} \right)^{3/2} e^{(\mu_e - m_e)/T} \label{math:ne}\\
+         n_{\He} &= g_{\He} \left( \frac{m_\He T}{2\pi} \right)^{3/2} e^{(\mu_\He - m_\He)/T} \label{math:nHe} \\
+         n_\Hepp &= g_\Hepp \left( \frac{m_\Hepp T}{2\pi} \right)^{3/2} e^{(\mu_\Hepp - m_\Hepp)/T} \label{math:nHepp}
+      \end{align}
+      Naively, one say because of Pauli principle, two neutrons (protons) in alpha particle ($\Hepp$) should have opposite spins. And thus the net spin should be zero. But one need to know the difference between $S$ and $S_z$.
+
+      We know that two spin $\frac{1}{2}$ particles (neutron or proton in this case) can form a symmetric triplet and an antisymmetric singlet, $ 2 \otimes 2 = 3_\text{S} \oplus 1_{\text{A}}$. It is true that with $S_1 = - S_2$, the total spin in $z$-direction should be zero, but the spin can either be $1$ or $0$.
+      \begin{align*}
+         \ket{ 1, 0} &= \frac{1}{\sqrt{2}} \left( \ket{\uparrow \downarrow} + \ket{\downarrow \uparrow } \right) \\
+         \ket{ 0, 0} &= \frac{1}{\sqrt{2}} \left( \ket{\uparrow \downarrow} - \ket{\downarrow \uparrow } \right)
+      \end{align*}
+      (one could use CG-coefficients from opposite direction to get the same result.)
+
+      Since we are looking for ground state, we need to find out which state have lower energy. Both states have integer spin, thus the total wavefunction must be symmetric. Then the $\ket{0, 0}$ must have antisymmetric spatial component of wave function $\psi_\text{A}(\vec{r}_1, \vec{r}_2)$ to achieve the symmetry. Antisymmetric spatial component should always have lower energy. To see this, we note that in the limit $\vec{r}_1 \rightarrow \vec{r}_2$
+      \begin{equation*}
+         \psi_\text{A}(\vec{r}_1, \vec{r}_2) \rightarrow 0
+      \end{equation*}
+      Thus in this configuration two identical particle must be further away from each other resulting lowered energy. After determining the configuration of $pp$ or $nn$ system, we then conclude that the alpha particle should have spin $0$ ($g_\Hepp = 1$). In turn, the only degrees of freedon in $\He$ system are from two electrons $g_{\He} = g_{ee} = 2! = 4$.
+
+   \item Expression of baryon number conservation for $n_\He$ and $n_\Hepp$ assuming that nuclei don't convert into each other. Since no interactions can change $(A,Z)$, one quarter of the baryons only have two forms (ignore the $\He^+$)
+      \begin{equation}
+         n_\Hepp + n_\He = 0.25 n_\text{B} \label{math:bcons}
+      \end{equation}
+      In this era, there are three electrically charge particles and asuming electrically neutral Universe
+      \begin{equation}
+         n_p + 2 n_{\Hepp} = n_e \label{math:neutral}
+      \end{equation}
+      There is $2$ before number density of $\Hepp$ because it carries two electric charges.
+   \item Expression of $n_{\He}$ in terms of $n_{\Hepp}$. 
+
+      First multiply (\ref{math:nHepp}) and $(\ref{math:ne})^2$ (the square will be obvious in a minute)
+      \begin{align*}
+         n_\Hepp n_e^2 &= g_\Hepp g_e^2 \bofa{m_\Hepp}^{3/2} \bofa{m_e}^{3/2 \cdot 2} e^{(\mu_\Hepp + 2 \mu_e - m_\Hepp - 2m_e)/T} \\
+         4 n^3_\Hepp &\stackrel{\ref{math:neutral}}{=} g_\Hepp g_e^2 \bofa{m_\Hepp}^{3/2} \bofa{m_e}^{3/2 \cdot 2} e^{[\mu_\He - (m_\He + \Delta \He)]/T} \\
+                     &= \frac{g_\Hepp g_e^2}{g_\He} n_\He \left( \frac{m_\Hepp}{m_\He} \right)^{3/2} \bofa{m_e}^3 e^{-\Delta \He /T} \\
+                     &\approx n_\He \bofa{m_e}^3 e^{-\Delta \He /T}
+      \end{align*}
+      where we have used (\ref{math:neutral}) without $n_p$ (Is this justified?) and 
+      \begin{equation*}
+         \frac{m_\Hepp}{m_\He} = \frac{m_\Hepp}{m_\Hepp + 2 m_e - \Delta \He} = \frac{\SI{3.7}{\giga \eV}}{\SI{3.7}{\giga \eV} + 2 \cdot \SI{0.5}{\mega \eV} - \SI{79}{\eV}} \approx 1
+      \end{equation*}
+      Rearranging this, we get
+      \begin{equation}
+         n_\He = 4 n^3_\Hepp \bofa{m_e}^{-3} e^{\Delta \He /T} \label{math:nHe2}
+      \end{equation}
+
+      Using (\ref{math:bcons}) and defintions of $X_i$
+      \begin{equation}
+         X_\Hepp + X_\He = 1
+      \end{equation} 
+      Plug in the result (\ref{math:nHe2}) and we have the Saha equation for Helium
+      \begin{equation}
+         X_\Hepp + 4 \tilde{n}_B^2 X_\Hepp^3 \bofa{m_e}^{-3} e^{\Delta He/T}= 1
+      \end{equation}
+
+      $\tilde{n}_B$ can be expressed in terms of baryon number density and is then related to photon number density
+      \begin{align*}
+         X_\Hepp + 4 \left( \tilde{\eta}_B n_\gamma \right)^2 X_\Hepp^3 \bofa{m_e}^{-3} e^{\Delta He/T} &= 1 \\
+         X_\Hepp +  4 \tilde\eta_B^2 \left( g_\gamma \frac{\zeta(3)}{\pi^2} T^3 \right)^2 X_\Hepp^3 \bofa{m_e}^{-3} e^{\Delta He/T} &= 1
+      \end{align*}
+      with $\tilde{\eta}_B = 0.25 \cdot \eta_B$
+      The second term in LHS is still $X_\He$. By demanding
+      \begin{equation}
+         X_\Hepp(T^\eq_r) \sim X_\He (T^\eq_r) \sim 1 
+      \end{equation}
+      we have
+      \begin{align*}
+         X_\He = 16 \tilde\eta_B \left(\frac{\zeta(3)}{\pi^2} \right)^2  T^6 X_\Hepp^3 \bofa{m_e}^{-3} e^{\Delta He/T}
+      \end{align*}
+
+      By demanding this quantity to be $\order{1}$ at $T^\eq_r$ (\textcolor{blue}{why is this true? (I know this is just assumption of this exercise. But why can we make this assumption without having large error?)})
+      \begin{equation*}
+         \frac{\Delta \He}{T_r^\eq} \sim - \ln \left[ \eta_B \frac{\zeta(3)^2}{\pi^4} \left( \frac{2\pi T^\eq_r}{m_e} \right)^3 \right] 
+      \end{equation*}
+      Use the hint to obtain approximate equation
+      \begin{align}
+         \frac{\Delta \He}{T_r^\eq} \approx \ln \left[ \frac{\pi^4}{\eta_B \zeta^2(3)} \left( \frac{m_e}{2 \pi \Delta\He} \right)^3 \right] \approx 46.2 \gg 1
+      \end{align}
+      The approximation is also valid! In the end, we have
+      \begin{equation}
+         T_r^\eq \approx \SI{1.71}{\eV}
+      \end{equation}
+      Indeed, helium recombination did happen before hydrogen recombination and the formula for number density in the beginning is well justified.
+\end{enumerate}
