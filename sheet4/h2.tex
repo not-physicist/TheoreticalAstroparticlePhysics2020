@@ -1,0 +1,30 @@
+\section{Number densities of particles and antiparticles}
+System that we are looking at: 
+\begin{itemize}
+\item Massless particles, $m=0$,
+\item chemical potential for particle $\mu$, chemical potential for anti particle$-\mu$,
+\item thermal bath with $T>>\mu$
+\item spin degrees of freedom, g
+\item $E^2 = \abs{\vec{p}}^2$ (because of m=0)
+\end{itemize}
+\begin{enumerate}[label=(\alph*)]
+\item First we look at the number density, from here on we use $p$ as $\abs{\vec{p}}$ 
+\begin{align}
+n 	&= g \int d^{3} p f( \vec{p} ) \\
+	&= g \int 	f(\vec{p}) d\Omega p^2 dp \\
+	&= 4\pi g \int 	f(p) p^2 dp \\
+	&= 4\pi g \int 	\frac{1}{(2\pi)^3} \frac{1}{e^{\frac{E-\mu}{T}}\pm 1}p^2 dp \\
+	&= \frac{g}{(2\pi^2)} \int \frac{1}{e^{\frac{p-\mu}{T}}\pm 1}p^2 dp \\
+	&= \frac{g}{(2\pi^2)} \int \left( \frac{1}{e^{\frac{p}{T}}\pm 1} + \frac{e^{\frac{p}{T}}}{(e^{\frac{p}{T}}\pm 1)^2}\frac{\mu}{T}\right)p^2 dp 
+\end{align}
+Now getting the equation from the question
+\begin{align}
+\frac{\Delta n}{g} 	&= \frac{n-\bar{n}}{g} \\
+				&= \frac{1}{(\pi^2)} \int \left( \frac{e^{\frac{p}{T}}}{(e^{\frac{p}{T}}\pm 1)^2}\frac{\mu}{T}\right)p^2 dp 
+\end{align}
+Now using $z=\frac{p}{T}$
+\begin{align}
+\frac{\Delta n}{g}	&= \frac{1}{(\pi^2)} \int \left( \frac{e^{z}}{(e^{z}\pm 1)^2} \frac{\mu}{T} \right)(zT)^2 d(zT) \\
+				&= \frac{\mu T^2}{(\pi^2)} \int \frac{z^2 e^{z}}{(e^{z} \pm 1)^2} dz \\
+\end{align}
+\end{enumerate}
