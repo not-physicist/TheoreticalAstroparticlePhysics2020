@@ -10,21 +10,21 @@ System that we are looking at:
 \begin{enumerate}[label=(\alph*)]
 \item First we look at the number density, from here on we use $p$ as $\abs{\vec{p}}$ 
 \begin{align}
-n 	&= g \int d^{3} p f( \vec{p} ) \\
-	&= g \int 	f(\vec{p}) d\Omega p^2 dp \\
-	&= 4\pi g \int 	f(p) p^2 dp \\
-	&= 4\pi g \int 	\frac{1}{(2\pi)^3} \frac{1}{e^{\frac{E-\mu}{T}}\pm 1}p^2 dp \\
-	&= \frac{g}{(2\pi^2)} \int \frac{1}{e^{\frac{p-\mu}{T}}\pm 1}p^2 dp \\
-	&= \frac{g}{(2\pi^2)} \int \left( \frac{1}{e^{\frac{p}{T}}\pm 1} + \frac{e^{\frac{p}{T}}}{(e^{\frac{p}{T}}\pm 1)^2}\frac{\mu}{T}\right)p^2 dp 
+n 	&= g \int d^{3} p f( \vec{p} ) \\ \notag 
+	&= g \int 	f(\vec{p}) d\Omega p^2 dp \notag \\
+	&= 4\pi g \int 	f(p) p^2 dp \notag  \\ 
+	&= 4\pi g \int 	\frac{1}{(2\pi)^3} \frac{1}{e^{\frac{E-\mu}{T}}\pm 1}p^2 dp \notag  \\ 
+	&= \frac{g}{(2\pi^2)} \int \frac{1}{e^{\frac{p-\mu}{T}}\pm 1}p^2 dp \notag \\ 
+n 	&= \frac{g}{(2\pi^2)} \int \left( \frac{1}{e^{\frac{p}{T}}\pm 1} + \frac{e^{\frac{p}{T}}}{(e^{\frac{p}{T}}\pm 1)^2}\frac{\mu}{T}\right)p^2 dp  
 \end{align}
 Now getting the equation from the question
 \begin{align}
-\frac{\Delta n}{g} 	&= \frac{n-\bar{n}}{g} \\
-				&= \frac{1}{(\pi^2)} \int \left( \frac{e^{\frac{p}{T}}}{(e^{\frac{p}{T}}\pm 1)^2}\frac{\mu}{T}\right)p^2 dp 
+\frac{\Delta n}{g} 	&= \frac{n-\bar{n}}{g} \\ \notag
+				&= \frac{1}{(\pi^2)} \int \left( \frac{e^{\frac{p}{T}}}{(e^{\frac{p}{T}}\pm 1)^2}\frac{\mu}{T}\right)p^2 dp \notag
 \end{align}
-Now using $z=\frac{p}{T}$
+\item  Now using $z=\frac{p}{T}$
 \begin{align}
-\frac{\Delta n}{g}	&= \frac{1}{(\pi^2)} \int \left( \frac{e^{z}}{(e^{z}\pm 1)^2} \frac{\mu}{T} \right)(zT)^2 d(zT) \\
-				&= \frac{\mu T^2}{(\pi^2)} \int \frac{z^2 e^{z}}{(e^{z} \pm 1)^2} dz \\
+\frac{\Delta n}{g}	&= \frac{1}{(\pi^2)} \int \left( \frac{e^{z}}{(e^{z}\pm 1)^2} \frac{\mu}{T} \right)(zT)^2 d(zT) \\ \notag
+				&= \frac{\mu T^2}{(\pi^2)} \int \frac{z^2 e^{z}}{(e^{z} \pm 1)^2} dz \notag
 \end{align}
 \end{enumerate}
