@@ -2,10 +2,10 @@
 System that we are looking at: 
 \begin{itemize}
 \item Massless particles, $m=0$,
-\item chemical potential for particle $\mu$, chemical potential for anti particle$-\mu$,
-\item thermal bath with $T>>\mu$
+\item chemical potential for particle $\mu$, chemical potential for anti particle $-\mu$,
+\item thermal bath with $T \gg \mu$
 \item spin degrees of freedom, g
-\item $E^2 = \abs{\vec{p}}^2$ (because of m=0)
+\item $E^2 = \abs{\vec{p}}^2$ (because of $m=0$)
 \end{itemize}
 \begin{enumerate}[label=(\alph*)]
 \item First we look at the number density, from here on we use $p$ as $\abs{\vec{p}}$ 
@@ -23,9 +23,10 @@ Now getting the equation from the question
 				&= \frac{1}{(\pi^2)} \int \left( \frac{e^{\frac{p}{T}}}{(e^{\frac{p}{T}}\pm 1)^2}\frac{\mu}{T}\right)p^2 dp \notag
 \end{align}
 \item  Now using $z=\frac{p}{T}$
-\begin{align}
-\frac{\Delta n}{g}	&= \frac{1}{(\pi^2)} \int \left( \frac{e^{z}}{(e^{z}\pm 1)^2} \frac{\mu}{T} \right)(zT)^2 d(zT) \\ \notag
-				&= \frac{\mu T^2}{(\pi^2)} \int \frac{z^2 e^{z}}{(e^{z} \pm 1)^2} dz \notag
+\begin{align}\label{eq:ng}
+\frac{\Delta n}{g}	&= \frac{1}{(\pi^2)} \int \left( \frac{e^{z}}{(e^{z}\pm 1)^2} \frac{\mu}{T} \right)(zT)^2 d(zT) \notag \\ 
+				&= \frac{\mu T^2}{(\pi^2)} \int \frac{z^2 e^{z}}{(e^{z} \pm 1)^2} dz 
 \end{align}
+If one use Mathematica to calculate the integral in eqn.\ref{eq:ng}, one gets $\alpha\pi^2$ where $\alpha $ is $1/6$ for fermions and $1/3$ for bosons. Thus getting the correct equation from the question. However, I was unable to integrate by parts properly to use integral and the Bernoulli numbers shown in the question.
 \end{enumerate}
 

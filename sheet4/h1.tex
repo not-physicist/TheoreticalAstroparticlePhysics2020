@@ -1,7 +1,6 @@
 \section{Quickies}
 \begin{enumerate}[label=(\alph*)]
 \item Briefly argue why the chemical potential $\mu_{\gamma}$ of photons is zero.\\
-
 We know that one can introduce chemical potential $\mu_i$ to conserved quantum numbers $Q^{(i)}$ to deal with all relevant reactions in thermalized system with various
 particle species. The chemical potential for particle of type A would then be
 \begin{equation} \label{eq:1}
@@ -11,7 +10,13 @@ where $Q^{(i)}_A$ are the quantum numbers carried by particle A.\\
 
 And for a photon, all of its quantum numbers are 0, eg. charge neutral, no lepton/baryon numbers, color neutral, etc. As such one can easily deduce that $\mu_{\gamma} = 0$\\
 
-Another way of looking at this is that we know photon is its own antiparticle. A consequence of the equation \ref{eq:1} is that $\mu_{\bar{A}} = -\mu_A $, which again leads to $\mu_{\gamma}=0$ %intuitively?
+Another way of looking at this is that we know photon is its own antiparticle. A consequence of the equation \ref{eq:1} is that $\mu_{\bar{A}} = -\mu_A $, which again leads to $\mu_{\gamma}=0$ 
+
+Another intuitive way of looking at this is going back to statistical mechanics, we know that the infinitesimal change of internal enegry U  is given by,
+\begin{align}
+\dd{U} = T\dd{s} - P \dd{V} + \mu \dd{N}
+\end{align}
+And given that $\dd{U}$ should reach 0 at some point and $\dd{N_{\gamma}}$ is never zero (because we know that photons can very easily created and disappear easily), $\mu_{\gamma}$ must be 0.
 \item At which approximate temperature did our universe transition from being dominated by radiation to a phase, where its energy density was dominated by non-relativistic matter? What is the corresponding redshift?\\
 To get the transition, one need to consider when the energy density of non-relativistic matter and the energy density of radiations are equal:
 \begin{align}
@@ -22,8 +27,7 @@ To get the transition, one need to consider when the energy density of non-relat
 Given that $\Omega_{rad} \approx 5.0\cdot 10^{-5}$ and $\Omega_M \approx 0.315$ 
 \begin{align}
 z_{eq} +1 &\approx 6300\\ 
-T_{eq} =T_0(z_{eq} +1 ) &\approx 3\cdot(6300) K \approx 18900K
-\SI{1.89e4}{\kelvin}
+T_{eq} =T_0(z_{eq} +1 ) &\approx 3\cdot(6300) K \approx \SI{1.89e4}{\kelvin}
 \end{align}
 
 \end{enumerate}
