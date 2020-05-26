@@ -27,6 +27,40 @@ Now getting the equation from the question
 \frac{\Delta n}{g}	&= \frac{1}{(\pi^2)} \int \left( \frac{e^{z}}{(e^{z}\pm 1)^2} \frac{\mu}{T} \right)(zT)^2 d(zT) \notag \\ 
 				&= \frac{\mu T^2}{(\pi^2)} \int \frac{z^2 e^{z}}{(e^{z} \pm 1)^2} dz 
 \end{align}
-If one use Mathematica to calculate the integral in eqn.\ref{eq:ng}, one gets $\alpha\pi^2$ where $\alpha $ is $1/6$ for fermions and $1/3$ for bosons. Thus getting the correct equation from the question. However, I was unable to integrate by parts properly to use integral and the Bernoulli numbers shown in the question.
+Focus on the integral
+\begin{align*}
+   &\int \dd{z} \frac{z^2 e^z}{(e^z \pm 1)^2} \\
+  =& \int \dd{z} \frac{z^2}{e^2 \pm 1} \left(  1 \mp \frac{1}{e^z \pm 1} \right) \\
+  =& \int \dd{z} \frac{z^2}{e^z \pm 1} \mp \int \frac{\dd{z} z^2}{(e^z \pm 1)^2} \\
+  =& \int \dd{z} \frac{z^2}{e^z \pm 1} \pm \int \dd{\left(\frac{1}{e^z \pm 1}\right)} z^2 \\
+  =& \int \dd{z} \frac{z^2}{e^z \pm 1} \pm \left( \left.\frac{z^2}{e^z \pm 1}\right|_{0}^{\infty} - 2 \int \frac{\dd{z}z}{e^z \pm 1} \right) \\
+  =& \int \dd{z} \frac{z^2}{e^z \pm 1} \mp  2 \int \frac{\dd{z}z}{e^z \pm 1} 
+\end{align*}
+The first term need separate treatments
+\begin{align*}
+   &\int \dd{z} \frac{z^2}{e^z + 1} \\
+   =& \Gamma(3) (1-2^{-2}) \zeta(3) \\
+   =& \frac{3}{2}  \zeta(3)
+\end{align*}
+and
+\begin{align*}
+   &\int \dd{z} \frac{z^2}{e^z - 1} \\
+   =& \Gamma(3) \zeta(3) \\
+   =& 2 \zeta(3)
+\end{align*}
+One can use the formula on sheet to calculate the second term
+\begin{equation*}
+   \int \frac{\dd{z}z}{e^z \pm 1} = 
+\begin{cases}
+   \frac{2 - 1}{2} \pi^2 \frac{1}{6} & \text{fermions} \\
+   \frac{(2\pi)^2}{4}\frac{1}{6} & \text{bosons}
+\end{cases}
+=
+\begin{cases}
+   \frac{\pi^2}{6} & \text{fermions} \\
+   \frac{\pi^2}{12} & \text{bosons}
+\end{cases}
+\end{equation*}
+The results don't match with the ones on sheet. Something went wrong.
 \end{enumerate}
 
