@@ -20,47 +20,40 @@ n 	&= \frac{g}{(2\pi^2)} \int \left( \frac{1}{e^{\frac{p}{T}}\pm 1} + \frac{e^{\
 Now getting the equation from the question
 \begin{align}
 \frac{\Delta n}{g} 	&= \frac{n-\bar{n}}{g} \\ \notag
-				&= \frac{1}{(\pi^2)} \int \left( \frac{e^{\frac{p}{T}}}{(e^{\frac{p}{T}}\pm 1)^2}\frac{\mu}{T}\right)p^2 dp \notag
+				&= \frac{1}{\pi^2} \int \left( \frac{e^{\frac{p}{T}}}{(e^{\frac{p}{T}}\pm 1)^2}\frac{\mu}{T}\right)p^2 dp \notag
 \end{align}
 \item  Now using $z=\frac{p}{T}$
 \begin{align}\label{eq:ng}
-\frac{\Delta n}{g}	&= \frac{1}{(\pi^2)} \int \left( \frac{e^{z}}{(e^{z}\pm 1)^2} \frac{\mu}{T} \right)(zT)^2 d(zT) \notag \\ 
-				&= \frac{\mu T^2}{(\pi^2)} \int \frac{z^2 e^{z}}{(e^{z} \pm 1)^2} dz 
+\frac{\Delta n}{g}	&= \frac{1}{\pi^2} \int \left( \frac{e^{z}}{(e^{z}\pm 1)^2} \frac{\mu}{T} \right)(zT)^2 d(zT) \notag \\ 
+				&= \frac{\mu T^2}{\pi^2} \int \frac{z^2 e^{z}}{(e^{z} \pm 1)^2} dz 
 \end{align}
-Focus on the integral
+Focus on the integral, one can do integrate by parts
 \begin{align*}
    &\int \dd{z} \frac{z^2 e^z}{(e^z \pm 1)^2} \\
-  =& \int \dd{z} \frac{z^2}{e^2 \pm 1} \left(  1 \mp \frac{1}{e^z \pm 1} \right) \\
-  =& \int \dd{z} \frac{z^2}{e^z \pm 1} \mp \int \frac{\dd{z} z^2}{(e^z \pm 1)^2} \\
-  =& \int \dd{z} \frac{z^2}{e^z \pm 1} \pm \int \dd{\left(\frac{1}{e^z \pm 1}\right)} z^2 \\
-  =& \int \dd{z} \frac{z^2}{e^z \pm 1} \pm \left( \left.\frac{z^2}{e^z \pm 1}\right|_{0}^{\infty} - 2 \int \frac{\dd{z}z}{e^z \pm 1} \right) \\
-  =& \int \dd{z} \frac{z^2}{e^z \pm 1} \mp  2 \int \frac{\dd{z}z}{e^z \pm 1} 
+  =& \int \dd{ \left(- \frac{1}{e^z \pm 1} \right)} z^2 \\
+  =& \left. -\frac{z^2}{e^z \pm 1} \right|_{0}^{\infty} + 2\int \dd{z} \frac{z}{e^z \pm 1} 
 \end{align*}
-The first term need separate treatments
-\begin{align*}
-   &\int \dd{z} \frac{z^2}{e^z + 1} \\
-   =& \Gamma(3) (1-2^{-2}) \zeta(3) \\
-   =& \frac{3}{2}  \zeta(3)
-\end{align*}
-and
-\begin{align*}
-   &\int \dd{z} \frac{z^2}{e^z - 1} \\
-   =& \Gamma(3) \zeta(3) \\
-   =& 2 \zeta(3)
-\end{align*}
-One can use the formula on sheet to calculate the second term
+If one looks at the first term graphically, one would notice that the at the boundaries, the term is equals to zero. One can then use the integrals given in the question to evaluate the second term:
 \begin{equation*}
-   \int \frac{\dd{z}z}{e^z \pm 1} = 
+  2\int \frac{\dd{z}z}{e^z \pm 1} = 
 \begin{cases}
-   \frac{2 - 1}{2} \pi^2 \frac{1}{6} & \text{fermions} \\
-   \frac{(2\pi)^2}{4}\frac{1}{6} & \text{bosons}
+   2\cdot\frac{2 - 1}{2} \pi^2 \frac{1}{6} & \text{fermions} \\
+   2\cdot\frac{(2\pi)^2}{4}\frac{1}{6} & \text{bosons}
 \end{cases}
 =
 \begin{cases}
    \frac{\pi^2}{6} & \text{fermions} \\
-   \frac{\pi^2}{12} & \text{bosons}
+   \frac{\pi^2}{3} & \text{bosons}
 \end{cases}
 \end{equation*}
-The results don't match with the ones on sheet. Something went wrong.
+Finally,
+\begin{equation}
+\frac{\Delta n}{g} 	= 
+\begin{cases}
+   \frac{\mu T^2}{6} & \text{fermions} \\
+   \frac{\mu T^2}{3} & \text{bosons}
+\end{cases}
+\end{equation}
+
 \end{enumerate}
 
