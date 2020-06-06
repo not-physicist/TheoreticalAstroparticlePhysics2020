@@ -1,0 +1,91 @@
+\section{Time of recombination from photon last scattering}
+\begin{enumerate}[label=\alph*)]
+   \item Assume the expansion was only cause by non-relativistic matter with $\Omega_m = 0.27$.  From previous homework, we know its energy density is proportional to its number density
+   \begin{equation}
+      \rho_M = m_M \cdot n_M
+      \label{math:rho}
+   \end{equation}
+
+   Per definition the ratios of $\Omega$ is the same as the ratio of energy density 
+      \begin{equation}
+         m_M n_M = \frac{\Omega_M}{\Omega_B} m_p n_B^{tot}(T)
+         \label{math:mn}
+      \end{equation}
+      and we say the baryonic matter in this epoch is simply protons or hydrogen atoms, thus the mass $m_B = m_p$.
+
+      Again the baryonic matter density is directly related to photon density
+      \begin{equation}
+         n_B^{tot} = \eta_B \cdot n_\gamma(T) = \eta_B \frac{2\zeta(3)}{\pi^2} T^3
+         \label{math:nB}
+      \end{equation}
+
+      Putting these three equations (\ref{math:rho}), (\ref{math:mn}), and (\ref{math:nB}) together
+      \begin{equation}
+         \rho_M = \frac{\Omega_M}{\Omega_B} m_p \eta_b \frac{2\zeta(3)}{\pi^2} T^3
+      \end{equation}
+
+      In matter-dominated epoch (the first equation is valid for all types of Universe with zero curvature), we have
+      \begin{align}
+         \rho &= \frac{3}{8\pi G} H^2 \label{math:rho2}\\
+         H(t) &= \frac{2}{3t} \label{math:Ht}
+      \end{align}
+
+      Then the Hubble parameter as last scattering is
+      \begin{align}
+         H(T_r) &= \left[\frac{8\pi G}{3}  \frac{\Omega_M}{\Omega_B} m_p \eta_b \frac{2\zeta(3)}{\pi^2} T^3 \right]^{1/2} \notag \\
+                &= \left[ \frac{8 \pi}{3} \frac{0.27}{0.046} 6.2\cdot 10^{-10} \frac{2 \cdot 1.20}{\pi^2} \frac{ \SI{938.3}{\mega \eV} \cdot (\SI{0.26}{\eV})^3}{(\SI{1.22e19}{\giga \eV})^2} \right]^{1/2} \notag \\
+                &= \SI{2.87e-38}{\giga \eV} \notag \\
+                &= \SI{1.435e-24}{\cm \tothe{-1}} \notag \\
+                &= \SI{4.45}{\mega\parsec \tothe{-1}}
+      \end{align}
+      The time can be computed with (\ref{math:Ht})
+      \begin{equation}
+         t = \frac{2}{3 H} = \SI{2.32e37}{\giga \eV \tothe{-1}} = \SI{15.3e12}{\s} = \SI{4.85e5}{ \year}
+      \end{equation}
+   \item
+      Now we have matter and rediation contributions. The Friedmann equation becomes
+      \begin{equation*}
+         H^2 (t) = \frac{8\pi G}{3} \rho = \frac{8 \pi G}{3} \left( \rho_\text{rad} + \rho_M \right)
+      \end{equation*}
+      Energy density of radiation, considering all relativitstic species, follows
+      \begin{equation*}
+         \rho_\text{rad} = g_* \frac{\pi^2}{30} T^4
+      \end{equation*}
+      where $g_*$ is the effective degrees of freedom. Without exact knowledge of the Universe, in particular the relativistic particles, $g_{*}$ is hard to determine. Thus we don't really want to plug it into Friedmann equation. 
+
+      However, we also know that the energy density of radiation $\rho_\text{rad} \sim a^{-4}$. Then we can write
+      \begin{equation}
+         a = \frac{c}{T}
+      \end{equation}
+      with $c$ a numerical constant and its exact value will be irrelevant.
+
+      The Friedmann equation with both contributions reads
+      \begin{align*}
+         \left( \frac{\dot{a}}{a} \right)^2 &= \frac{8\pi G}{3} \rho_c \left[ \Omega_M \left( \frac{a_0}{a} \right)^3 + \Omega_\text{rad} \left( \frac{a_0}{a} \right)^4 \right]\\
+         \dv{a}{t} &= H_0 \left( \Omega_M \frac{a_0^3}{a}  + \Omega_\text{rad} \frac{a_0^4}{a^2}  \right) ^{1/2} \\
+         \int_0^{t_r} \dd{t} &= \frac{1}{H_0} \int_0^{a_r} \dd{a}  \left( \Omega_M \frac{a_0^3}{a}  + \Omega_\text{rad} \frac{a_0^4}{a^2}  \right) ^{-1/2}
+      \end{align*}
+      Do a simple substitution 
+      \begin{equation*}
+         \dd{a} = - \frac{a}{T} \dd{T}
+      \end{equation*}
+      The integral on RHS gets flipped because of the negative sign
+      \begin{align*}
+         \int_0^{t_r} \dd{t} &= \frac{1}{H_0} \int_{T_r}^{\infty} \frac{\dd{T}}{T}   \left( \Omega_M \frac{a_0^3}{a^3}  + \Omega_\text{rad} \frac{a_0^4}{a^4}  \right) ^{-1/2} \\
+         t_r &=  \frac{1}{H_0} \int_{T_r}^{\infty} \frac{\dd{T}}{T}  \left( \Omega_M \frac{T^3}{T_0^3}  + \Omega_\text{rad} \frac{T^4}{T_0^4}  \right)^{-1/2}
+      \end{align*}
+      With Python and its package, the integral is nuemerically evaluated 
+      \begin{equation}
+         t_r = \SI{2.1e6}{\year}
+      \end{equation}
+      which cannot be right.
+
+      \iffalse
+      Thus the Hubble parameter as a function of temperature is
+      \begin{align}
+         H'(T_r)^2 &=  \frac{8 \pi G}{3} \left( g_* \frac{\pi^2}{30} T^4 + \frac{\Omega_M}{\Omega_B} m_p \eta_b \frac{2\zeta(3)}{\pi^2} T^3 \right) \\
+                   &= \SI{9.62e-38}{\giga \eV} > H(T_r)
+      \end{align}
+      \fi
+   \item The Universe transitioned from radiation dominated to matter dominated at $\SI{0.76}{\eV}$. Thus in order to get the correct time of last scattering, one need to include radiation.
+\end{enumerate}
