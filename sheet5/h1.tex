@@ -1,10 +1,13 @@
 \section{Quickies}
 \begin{enumerate}[label=\alph*)]
 	\item Briefly explain why the temperature of about \SI{0.3}{eV}, at which the production of neutral hydrogen becomes thermodynamically favored, is less than one would naively expect from the binding energy of neutral hydrogen, which is \SI{13.6}{eV}.\\
-	We should look at distribution of particles, different temperature leads to different tails? I dunno man. *insert poop emoji*
+
+      Like last homework, one can write out saha equation and solve the recombination temeperature at $n_p \sim n_H$. To give a more physical and intuitive explanation without detailed calculation, we consider the kinetic aspects of the interaction $e + p  \leftrightarrow H + \gamma$.
+
+      We assume that proton densities are small. (Rightfully so, if the chemical potential is small relative to the temperature in the distribution functions, and the number density is exponentially suppressed. It will be shown in the next part.) The time for a electron with several protons to interact in the forward direction is $\tau_+ \propto 1/\Gamma \propto 1/n_B$, where we take all baryons are in form of proton (or at least fixed proportional of baryons). Since the photon is thermally distributed, when the temperature is lower than the ionization energy, there was still photons able to ionize hydrogen (backward interaction). The time it takes is then $\tau_- \propto e^{\Delta_H / T}$. We define the recombination time as the time at $\tau_+ \sim \tau_-$, thus for small $n_B$, we have $\Delta \gg T$.
 	
 	\item The baryon asymmetry of our universe can be quantified with the time independent	ratio $\Delta_B = \frac{n_B - n_{\bar{B}} }{s} $, where $n_B$ ($n_{\bar{B}}$) is the number density of baryons (anti-baryons)	and s is the entropy density of the universe. It turns out that $\Delta_B \approx 0.14 \eta_B$, where $\eta_B \approx \SI{6.1e-10}{}$ is the baryon to photon r ratio inferred from measurements of the	CMB and nuclear abundances from BBN. What does the smallness of this number imply for the chemical potential of baryons $\mu_B$ at temperatures much larger than both µB and the baryon mass? \\
-	
+
 	The difference in number density (from the previous sheet) is,
 	\begin{equation}
 	\frac{\Delta n }{g} = \alpha \mu T^2 \text{ with } \alpha \begin{cases} 1/6 \text{ for fermions} \\ 1/3 \text{ for bosons} \end{cases}
@@ -20,4 +23,15 @@
 	\mu_B &\approx 2.2476 \cdot 10^{-10} T
 	\end{align*}
 	At high temperature, non-neglible $\mu_B$?
+
+   Even though temperature is high, but we still consider the baryon as non-relativistic particles. The number densities of baryons and anti-baryons only differ in the exponent.
+   \begin{align*}
+      n_B &\propto e^{(\mu_B - m_B)/T}\\
+      n_\bar B &\propto e^{(-\mu_B - m_B)/T}
+   \end{align*}
+   At high temeperature, we can expand the exponentials, and the baryon asymmetry becomes
+   \begin{align}
+      \Delta_B \propto e^{(\mu_B - m_B)/T} - e^{(-\mu_B - m_B)/T} = 2\mu_B / T  + \order{1/T^2}
+   \end{align}
+   Thus the smallness of baryon asymmetry implies the smallness of its chemical potential.
 \end{enumerate}
