@@ -42,6 +42,23 @@
       \begin{equation}
          t = \frac{2}{3 H} = \SI{2.32e37}{\giga \eV \tothe{-1}} = \SI{15.3e12}{\s} = \SI{4.85e5}{ \year}
       \end{equation}
+
+      Alternatively, we can rewrite the Friedmann equation in terms of temperature.
+      We know that the energy density of radiation $\rho_\text{rad} \sim a^{-4}$. Then we can write
+      \begin{equation*}
+         a = \frac{c}{T} \Rightarrow 
+         \dd{a} = - \frac{a}{T} \dd{T}
+      \end{equation*}
+      Thus
+      \begin{align*}
+         H^2(t) &= \left( \frac{\dot{a}}{a} \right)^2 = H_0^2 \Omega_M \left(\frac{T}{T_0}\right)^3 \\
+         H(T) &= \frac{1}{T} \frac{\dd{T}}{\dd{t}}  \\
+         t(T) &= \int_T^\infty \dd{T'} \frac{\dd{T'}}{H(T')T'} \\
+         t(T) &= \frac{1}{H_0 \sqrt{\Omega_M}} \left( \frac{T_0}{T} \right)^{3/2}
+      \end{align*}
+      Plug in the temperatures ($T_0 = \SI{2.7}{\kelvin} = \SI{2.3e-4}{\eV}$), it gives the same age of the Universe.
+
+
    \item
       Now we have matter and rediation contributions. The Friedmann equation becomes
       \begin{equation*}
@@ -51,25 +68,22 @@
       \begin{equation*}
          \rho_\text{rad} = g_* \frac{\pi^2}{30} T^4
       \end{equation*}
-      where $g_*$ is the effective degrees of freedom. Without exact knowledge of the Universe, in particular the relativistic particles, $g_{*}$ is hard to determine. Thus we don't really want to plug it into Friedmann equation. 
+      where $g_*$ is the effective degrees of freedom. Without exact knowledge of the Universe, in particular the relativistic particles, $g_{*}$ is hard to determine. Thus we don't really want to plug it into Friedmann equation. (Actually I tried it under assumption of SM, e.g.~$g_*=3.36$, considering three neutrinos and phtons, and apply the normal matter dominated era formula. We get eventually $t=\SI{4.2e5}{\year}$.)
 
-      However, we also know that the energy density of radiation $\rho_\text{rad} \sim a^{-4}$. Then we can write
-      \begin{equation}
-         a = \frac{c}{T}
-      \end{equation}
-      with $c$ a numerical constant and its exact value will be irrelevant.
-
+      Following the same receipt as the alternative solution to a)
+      \begin{align}
+         t(T_r) &= \frac{1}{H_0} \int_{T_r}^\infty \frac{\dd{T}}{T} \left[ \Omega_M \left( \frac{T}{T_0} \right)^3 + \Omega_{rad} \left( \frac{T}{T_0} \right)^4 \right]^{-1/2}\\
+                &= \SI{3.58e5}{\year}
+      \end{align}
+      
+      \iffalse
       The Friedmann equation with both contributions reads
       \begin{align*}
          \left( \frac{\dot{a}}{a} \right)^2 &= \frac{8\pi G}{3} \rho_c \left[ \Omega_M \left( \frac{a_0}{a} \right)^3 + \Omega_\text{rad} \left( \frac{a_0}{a} \right)^4 \right]\\
          \dv{a}{t} &= H_0 \left( \Omega_M \frac{a_0^3}{a}  + \Omega_\text{rad} \frac{a_0^4}{a^2}  \right) ^{1/2} \\
          \int_0^{t_r} \dd{t} &= \frac{1}{H_0} \int_0^{a_r} \dd{a}  \left( \Omega_M \frac{a_0^3}{a}  + \Omega_\text{rad} \frac{a_0^4}{a^2}  \right) ^{-1/2}
       \end{align*}
-      Do a simple substitution 
-      \begin{equation*}
-         \dd{a} = - \frac{a}{T} \dd{T}
-      \end{equation*}
-      The integral on RHS gets flipped because of the negative sign
+      Do a simple substitution and the integral on RHS gets flipped because of the negative sign
       \begin{align*}
          \int_0^{t_r} \dd{t} &= \frac{1}{H_0} \int_{T_r}^{\infty} \frac{\dd{T}}{T}   \left( \Omega_M \frac{a_0^3}{a^3}  + \Omega_\text{rad} \frac{a_0^4}{a^4}  \right) ^{-1/2} \\
          t_r &=  \frac{1}{H_0} \int_{T_r}^{\infty} \frac{\dd{T}}{T}  \left( \Omega_M \frac{T^3}{T_0^3}  + \Omega_\text{rad} \frac{T^4}{T_0^4}  \right)^{-1/2}
@@ -78,9 +92,7 @@
       \begin{equation}
          t_r = \SI{2.1e6}{\year}
       \end{equation}
-      which cannot be right.
 
-      \iffalse
       Thus the Hubble parameter as a function of temperature is
       \begin{align}
          H'(T_r)^2 &=  \frac{8 \pi G}{3} \left( g_* \frac{\pi^2}{30} T^4 + \frac{\Omega_M}{\Omega_B} m_p \eta_b \frac{2\zeta(3)}{\pi^2} T^3 \right) \\
@@ -88,6 +100,5 @@
       \end{align}
       \fi
 
-      \textcolor{blue}{Maybe use $g_{*} =3.36$? But why it does not work here?}
    \item The Universe transitioned from radiation dominated to matter dominated at $\SI{0.76}{\eV}$. Thus in order to get the correct time of last scattering, one needs to include radiation.
 \end{enumerate}
