@@ -1,0 +1,47 @@
+\section{Graviton Decoupling}
+\begin{enumerate}[label=\alph*)]
+   \item Since gravitational interaction is characterised by $M_{pl}$, through simple dimensional analysis, we estimate the interaction rate
+      \begin{equation}
+         \Gamma = \frac{T^5}{M_{pl}^4}
+      \end{equation}
+      The Hubble time in radiation-dominated era is $H = T^{2}/M_{pl}$. The particle of interest decouples when $\Gamma \sim H$, so
+      \begin{equation*}
+         \frac{\Gamma}{H} = \left( \frac{T}{M_{pl}} \right)^3 \sim 1 
+      \end{equation*}
+      Thus we have
+      \begin{equation}
+         T_{G,\text{dec}} \sim M_{pl} = \SI{1.2e19}{\giga\eV}
+      \end{equation}
+      It happened rather near the beginning of the Universe. It also justifies the assumption that it happended in the radiation-dominated era.
+
+   \item With this high temperature, all particles in SM were relativistic. They were all in thermal equilibrium, thus $(T_i/T) = 1$. Since this is before recombination and QCD phase transition, we only consider elementary particles. 
+
+      Ths bosons are the Higg boson , gluons, $W^\pm$, $Z^0$ and $\gamma$. The fermion part includes quarks and leptons. Note that in SM there is no right-handed neutrinos.
+      \begin{align}
+         g_{*s } (T_{G,\text{dec}}) &= \sum_\text{bosons} g_i + \frac{7}{8} \sum_\text{fermions} g_i\\
+                 &= (1 \cdot 1 +  1 \cdot 8 \cdot 2 + 2 \cdot 3 + 1 \cdot 3 + 1 \cdot 2) + \frac{7}{8} 2\cdot (3 \cdot 2 \cdot 6 + 3 \cdot 2 + 3 \cdot 1) \\
+                 &= 106.75
+      \end{align}
+      \textcolor{blue}{Somehow considering the particles/fields before EWSB doesn't give the correct value. The total degrees of freedom are not the same, since the Higgs loses its one degree of freedom to make $W^{\pm}$ and $Z^0$ massive and thus give them in total $3$ degrees of freedoms.}
+   \item In the present Universe, there are only photons and neutrinos still relativitic. Although neutrinos are relativistic, they have already decoupled and not in thermal equilibrium with photons anymore. From the lecture, $T_{\gamma, 0} / T_{\nu, 0} \simeq (11/4)^{1/3} $
+      \begin{equation} 
+         g_{*s}(T_0) = 1\cdot 2 + \frac{7}{8} \cdot 6 \cdot \frac{4}{11} = 3.91
+   \end{equation}
+   Instead of considering only electron-photon component in determining neutrino temeperature, we consider all the particles
+   \begin{equation*}
+      g_{*s}(T) a^3 T^3 = \text{const}
+   \end{equation*}
+   Using this to compare the time of graviton decoupling and present Universe.
+   \begin{align}
+     & g_{*s}(T_{G, \text{dec}}) a^3_{G, \text{dec}} T^3_{G, \text{dec}} = g_{*s}( T_0) a_0^3 T^3_0 \notag \\
+     &\Rightarrow T_{G,0}^3 = \left( T_{G,\text{dec}} \frac{a}{a_0} \right)^3 = T_0^3 \frac{g_{*s}(T_0)}{g_{*s}(T_{G, \text{dec}})} \notag \\
+     &\Rightarrow T_{G,0} = T_0 \left( \frac{g_{*s}(T_0)}{g_{*s}(T_{G, \text{dec}})} \right)^{1/3} = \SI{0.897}{\kelvin}
+   \end{align}
+   Since graviton is massless, it should be relativistic
+   \begin{equation}
+      n_{G,0} = 1\cdot \frac{\zeta(3)}{\pi^2} T_{G,0}^3 = \SI{7.25}{\cm\tothe{-3}}
+   \end{equation}
+   As expected, we have far less gravitons floating around than neutrinos, since graviton decoupling happened before neutrino decoupling.
+
+   \textcolor{blue}{Shouldn't graviton always be massless?}
+\end{enumerate}
