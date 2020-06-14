@@ -4,7 +4,23 @@ Here we have neglected the existence of the Z-boson, neutrino oscillations and l
    \item At temperature above the muon mass $(T \gtrsim m_\mu \approx \SI{105}{MeV})$ and below  QCD phase transition $(T \lesssim T_{QCD} \approx \SI{170}{MeV})$, \\
 The only relevant process are weak interacting process with exchange of W bosons. As we are at temperaure above   the muon mass, muon and anti-muon plays a role. As shown below are the simplified feynman diagrams. 
 
-\textcolor{blue}{Refer to the FD.png. I can use tik to draw the FD again if you want to. But of course Im lazy. lol. And also I have not included any fermion lines here because it represent both possibilities.  \\}
+\begin{equation*}
+   \feynmandiagram[horizontal=v1 to v2]{
+      i1[particle=\(\nu\)] -- v1 -- i2[particle=\(l\)],
+      v1 --[photon, edge label=\(W\)] v2,
+      f1[particle=\(\nu'\)] -- v2 -- f2[particle=\(l'\)],
+   };
+   \feynmandiagram[vertical=v1 to v2]{
+      i1[particle=\(\nu'\)] -- v1 -- f1[particle=\(l'\)],
+      v1 --[photon, edge label=\(W\)] v2,
+      i2[particle=\(\nu\)] -- v2 -- f2[particle=\(l\)],
+   };
+   \feynmandiagram[vertical=v1 to v2]{
+      i1[particle=\(\nu'\)] -- v1 -- f1[particle=\(l'\)],
+      v1 --[photon, edge label=\(W\)] v2,
+      i2[particle=\(\nu\)] -- v2 -- f2[particle=\(l\)],
+   };
+\end{equation*}
 
 \textcolor{blue}{Other process to think about:}
 \begin{enumerate}
