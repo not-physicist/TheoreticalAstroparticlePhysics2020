@@ -1,0 +1,74 @@
+\section{Decoupling of electron- and muon-neutrino}
+Here we have neglected the existence of the Z-boson, neutrino oscillations and loop process.
+\begin{enumerate}[label=\alph*)]
+   \item At temperature above the muon mass $(T \gtrsim m_\mu \approx \SI{105}{MeV})$ and below  QCD phase transition $(T \lesssim T_{QCD} \approx \SI{170}{MeV})$, \\
+The only relevant process are weak interacting process with exchange of W bosons. As we are at temperaure above   the muon mass, muon and anti-muon plays a role. As shown below are the simplified feynman diagrams. 
+
+\textcolor{blue}{Refer to the FD.png. I can use tik to draw the FD again if you want to. But of course Im lazy. lol. And also I have not included any fermion lines here because it represent both possibilities.  \\}
+
+\textcolor{blue}{Other process to think about:}
+\begin{enumerate}
+\item \textcolor{blue}{There is also pion decays to leptons and leptons neutrinos which I'm not sure whether or not to include here. As pion mass is arounf 134 to 139 MeV. it is stated that we are working at temperature "below the QCD phase transition" I understand in the sense that we need to ignore perturbative QCD process. I would assume treating pions as a boson rather than two quarks would make sense. But again. it is stated that "hadronic degrees of freedom in the plasma is already decayed away". Im not sure what does that means. I guess we should ignore processes with hadrons?}
+\item \textcolor{red}{and there is also neutrino neutrino to W W and/or neutrino W to neutrino W process, and I think it make sense to ignore this, because $m_W$ is too high so probably fucking surpressed.}
+\end{enumerate}
+
+\item At temperature below the muon mass, the production of muons will be surpressed while existing muons will decay into electrons, electron-neutrinos and muon-neutrinos. In the absence of muons, neutrino are unable to interact with anything else, since the only process we considering here is weak interaction via W(in which muon neutrino is coupled to muons via W bosons.) So, at this point  muon-neutrinos will be decoupled from the plasma. Note that this is true only if the existence of Z-boson, neutrino oscillation and loop process are neglected.
+\begin{align}
+g_{\ast} (T>m_{\mu}) &= 2_{\gamma} + \frac{7}{8} (4_e + 4_{\mu} +  2_{\nu_{\mu}} + 2_{\nu_{e}}) =  12.5 \\
+g_{\ast} (T<m_{\mu}) &= 2_{\gamma} + \frac{7}{8} (4_e +  + 2_{\nu_{e}}) =  7.25 
+\end{align}•
+\textcolor{blue}{When a degree of freedom is not a degree of freedom anymore, it means that the particle is decoupled right? In some text I found online (eg:https://ethz.ch/content/dam/ethz/special-interest/phys/particle-physics/cosmologygroup-dam/Courses/TheoreticalCosmology/2017/solution\%203.pdf), however in their case they didnt ignore the existence of Z boson, as such muon- and tau-neutrinos are still able to be coupled despite not having any muons or taus left. }
+\textcolor{blue}{I still dont have a good idea of thermal equilibrium in the context of particle physics :poop:\\}•
+\textcolor{blue}{3 points for this, do I need to calculate some shit? If so, any idea how?}
+
+\item when $\frac{\Gamma}{H} > 1$ the expansion rate of the universe is sloower than that of the scaterring rate, and as such, it is still posible for the particle to interact/scatter and as such still at thermal equilibirum with the plasma. \\
+
+when $\frac{\Gamma}{H} < 1$ , the expansion rate of the universe is faster than that of the scattering rate, and as such, the particle are far apart and are unable to interact/scatter effectively anymore. \\
+
+The particles are decoupled when 
+\begin{align*}
+\frac{\Gamma}{H} &= 1 \\
+G_F^2 T_{dec}^5 &= \frac{T_{dec}^2}{M_{Pl}}\\
+T_{dec} &= \left( \frac{1}{G_F^2 M_{Pl}}\right)^{\frac{1}{3}}\\
+&= \left( \frac{1}{(\SI{1.166e-5}{GeV})^2 (\SI{1.22e19}{GeV})}\right)^{\frac{1}{3}}\\
+&= \SI{0.0008447}{GeV} \\ &= \SI{0.8447}{MeV} 
+\end{align*}
+\textcolor{blue}{This is lower than the value given in the Gorbunov text ($2 - 3 \SI{}{MeV}$), probably due to the approximation of $M^\ast_{Pl}$ to $M_{Pl}$. (Recall that $H = \frac{T^2}{M^\ast_{Pl}}$ where $M^\ast_{Pl} = \frac{1}{1.66\sqrt{g_\ast}}M_{Pl}$). In doing so, one has ignored the dependence of the relativistic degree of freedom. In wiki its around 1MeV which is true for us}
+
+\item Knowing that,\\
+\begin{align}
+sa^3 &\propto g_\ast T^3 a^3 = \text{const}
+\end{align}
+One can compare the ratio of the degrees of freedom and temperature at different times
+\begin{align}
+g_{\ast,\alpha}T_\alpha^3 &= g_{\ast,\beta}T_\beta^3 
+\end{align}
+and one would end up with the following relation
+\begin{equation}
+T_\beta = \left(\frac{g_{\ast,\alpha}}{g_{\ast,\beta}}\right)^{1/3}T_\alpha
+\end{equation}
+After neutrino decoupling, the neutrino temperature remains the same despite the expanding of the universe. However, when the temperature goes below electron mass, electrons and positrons annihilate leading to a higher photon temperature. 
+So to find the temperature of the decoupled electron-neutrinos, one simply has to compare when $T > m_e$ and $T < m_e$.
+
+At $T > m_e$, $T = T_{\nu_e}$, $g_{\ast,\nu_e} = 2_\gamma + \frac{7}{8}4_e = 5.5 $\\
+At $T < m_e$, $T= T_{\gamma}$, $g_{\ast,\gamma} = 2_\gamma $\\
+Now,
+\begin{align}
+T_{\nu_e} &= \left(\frac{g_{\ast,\gamma}}{g_{\ast,\nu_e}}\right)^{1/3}T_\gamma \\
+&= \left( \frac{4}{11} )^{1/3} (\SI{2.725}{K}\right) \\
+&\approx \SI{1.95}{K}
+\end{align}
+
+\item To find the decoupled muon-neutrinos temperature, one simply follow the same procedure again with different relativistic effective numbers of degree of freedom. Taking $g_{\ast} (T<m_{\mu})=  7.25$ 
+\begin{align}
+T_{\nu_\mu} &= \left(\frac{2}{7.25}\right)^{1/3}\SI{2.725}{K}\\
+&\approx \SI{1.77}{K}
+\end{align}
+Recall that for realtivistic particles that obey the Fermi-Dirac statistics, 
+\begin{align}
+n \propto T^3
+\end{align}
+and since $T_{\nu_e} > T_{\nu_\mu}$, one would expect the number density of electron-neutrinos to be higher.
+
+
+\end{enumerate}
