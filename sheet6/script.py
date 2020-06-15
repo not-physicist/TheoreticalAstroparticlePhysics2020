@@ -14,6 +14,7 @@ print("Now:")
 gStarsNow = 1 * 2 + 7/8 * 6 * (4/11)
 print(gStarsNow)
 
+print("g/g", gStarsNow/gStarsDec)
 T_G0 = 2.7 * (gStarsNow/gStarsDec)**(1/3)
 print(T_G0)
 
