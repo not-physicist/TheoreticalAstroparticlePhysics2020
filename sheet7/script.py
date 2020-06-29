@@ -15,6 +15,9 @@ tNS *= 6.6e-25 #s
 print("t_NS = ", tNS, " s")
 
 # 2 b)
+gStar = 2 + 7/8 * 4 + 7/8 * 3 *2
+print("g_*= ", gStar)
+MPlStar = MPl / 1.66 / np.sqrt(gStar)
 Tn = (MPlStar * Cn * G_F**2) ** (-1/3)
 Tn *= 1e3
 print("Tn = ", Tn, "MeV")
