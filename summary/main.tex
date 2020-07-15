@@ -1,0 +1,506 @@
+\documentclass[12pt, a4paper, DIV=15]{article}
+
+% useful packages 
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{graphicx}					  
+\graphicspath{{figs/}}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage[separate-uncertainty = true]{siunitx}
+\usepackage{xcolor}
+\usepackage{braket} % easy braket notation
+\usepackage{enumitem}
+\usepackage{cancel}
+\usepackage{tikz-feynman}
+
+\usepackage{fontspec}
+
+\usepackage[backend=biber, sorting=none]{biblatex}
+\bibliography{refs.bib}
+
+\numberwithin{equation}{section}
+
+% New command and etc
+
+\DeclareSIUnit\parsec{pc} % parsec
+\DeclareSIUnit\year{year} % parsec
+
+\DeclareMathOperator{\arsinh}{arsinh}
+
+\newcommand{\eff}{\text{eff}}
+\newcommand{\fHe}{{{}^4\text{He}}}
+\newcommand{\npnn}{\frac{n_p(T_{NS})}{n_n(T_{NS})}}
+\newcommand{\nnnp}{\frac{n_n(T_{NS})}{n_p(T_{NS})}}
+
+\title{Theoretical Astroparticle Physik \\ Notes and summary}
+\date{\today}
+\author{Chenhuan Wang}
+\begin{document}
+\maketitle
+
+\section{Introduction to GR}
+Nah
+
+\section{Introduction to cosmology}
+Gravitational constant
+\begin{equation}
+   G = M_{pl}^{-2}, \quad [G] = -2
+\end{equation}
+
+Current value of Hubble parameter
+\begin{equation}
+   H_0 = \SI{70.5 +- 1.3}{\km \s\tothe{-1} \mega\parsec\tothe{-1}}
+\end{equation}
+
+\begin{equation}
+   \SI{1}{\year} \approx \pi \cdot 10^7 \si{\s}
+\end{equation}
+
+CMB temerature
+\begin{equation}
+   T_0 = \SI{2.726 +- 0.001}{\kelvin}
+\end{equation}
+
+\section{Homogeneous isotropic Universe}
+FLRW metric
+\begin{equation}
+   \dd{s^2} = \dd{t^2} - a^2(t) \gamma_{ij} \dd{x^i} \dd{x^j}
+\end{equation}
+with
+\begin{align}
+   \kappa = + 1: \quad \gamma_{ij} \dd{x^i} \dd{x^j} &= R^2 \left[ \dd{\chi^2} + \sin^2 \chi \left( \dd{\theta^2} + \sin^2 \theta \dd{\phi^2} \right) \right]  \\
+   \kappa = -1: \quad \gamma_{ij} \dd{x^i} \dd{x^j} &= R^2 \left[ \dd{\chi^2} + \sinh^2 \chi \left( \dd{\theta^2} + \sin^2 \theta \dd{\phi^2} \right) \right] \\
+   \kappa = 0: \quad \gamma_{ij} \dd{x^i} \dd{x^j} &= (\dd{x^1})^2  + (\dd{x^2})^2 + (\dd{x^3})^2
+\end{align}
+
+This metric is in the comoving frame, meaning that space is the same everywhere at each moment of time and world lines of particles which are at rest with respect to this frame are geodesic. Observer in this frame moves along with expansio and perceives the Universe to be isotropic. Observer in this frame moves along with expansio and perceives the Universe to be isotropic.
+
+Hubble parameter
+\begin{equation}
+   H(t) = \frac{\dot a(t)}{a(t)}
+\end{equation}
+
+Conformal coordinates
+\begin{align}
+   \dd{t} &= a \dd{\eta} \Rightarrow \eta = \int \frac{\dd{t}}{a(t)}\\
+   \dd{s^2} &= a^2(\eta) \eta_{\mu\nu} \dd{x^\mu} \dd{x^\nu}
+\end{align}
+In theories of massless vector fields, the action in conformal coordinates $(\eta, x^i)$ in general reduces to the flat space-time action. The physical momentum $\pmb{p}$ (same for the frequency) at time $t$ are
+\begin{equation}
+   \pmb{p} (t) = \frac{\pmb{k}}{a(t)}
+\end{equation}
+
+Redshift
+\begin{equation}
+   \lambda_0 = \lambda_i \frac{a_0}{a(t_i)} = \lambda_i \left[  1 + z(t_i) \right]
+\end{equation}
+With linear approximation, we get the Hubble law
+\begin{equation}
+   z = H_0 r, \quad r \ll 1
+\end{equation}
+
+Slowing down of relative motion
+\begin{equation}
+   \pmb{p} = \frac{\pmb{k}}{a(t)}
+\end{equation}
+
+Gases of free particles in expanding Universe
+\begin{itemize}
+   \item relativistic
+      \begin{equation}
+         T_\eff \propto \frac{1}{a(t)}
+      \end{equation}
+      since $\exp^{p/T}$ appears in the denominator of distribution $f(\pmb{p})$.
+   \item non-relativistic
+      \begin{equation}
+         T_\eff \propto \frac{1}{a^2(t)}
+      \end{equation}
+      since $\exp(-p^2/2mT)$ appears in the distribution.
+\end{itemize}
+
+\section{Dynamics of cosmological expansion}
+\paragraph{Friedmann equation} ($00$ component of Einstein field equations)
+\begin{equation}
+   H(t)^2 = \left ( \frac{\dot{a}}{a} \right)^2  = \frac{8\pi}{3} G \rho - \frac{\kappa}{a^2}
+   \label{Friedmann}
+\end{equation}
+
+\paragraph{Energy conservation}
+\begin{align}
+   &\nabla_\mu T^{\mu \nu} = 0 \\
+   &\stackrel{\nu=0}{\Rightarrow} \dot{\rho} + 3 \frac{\dot{a}}{a} (\rho + p) = 0 \\
+   & \frac{\dd{\rho}}{p + \rho} = -3 \dd{(\ln a)} \label{Econs}
+\end{align}
+
+\paragraph{Equation of state of matter}
+\begin{equation}
+   p = p(\rho) = \omega \rho
+\end{equation}
+with $\omega = 0$ for non-relativistic particles, $\omega=1/3$ for relativistic particles, and $\omega = -1$ for vacuum.
+
+\paragraph{Sample comsmological solutions} with zero curvature ($\kappa = 0$)
+\begin{itemize}
+   \item matter dominated Universe 
+
+      \eqref{Econs} with $p=0$ 
+      \begin{equation}
+         \rho \propto a(t)^{-3}
+      \end{equation}
+      With \eqref{Friedmann}
+      \begin{equation}
+         a(t) \propto (t-t_s)^{2/3}
+      \end{equation}
+      Normally we count time from cosmological singularity, so set $t_s = 0$. Then
+      \begin{equation}
+         H(t) = \frac{2}{3t}
+      \end{equation}
+
+   \item radiation dominated Universe
+      
+      \eqref{Econs} with $p=\rho/3$
+      \begin{align}
+         \rho &\propto a^{-4} \\
+         a &\propto t^{1/2}
+      \end{align}
+      Hubble parameter
+      \begin{align}
+         H(t) &= \frac{1}{2t} \\
+         H(T) &= \frac{T^2}{M^*_{pl}} = \frac{1.66 \sqrt{g^*}T^2}{M_{pl}}
+      \end{align}
+      where $g_*$ is defined as
+      \begin{equation}
+         g_* = \sum_b g_b + \frac{7}{8} \sum_f g_f
+      \end{equation}
+
+   \item vacuum dominated (de Sitter space, $p = -\rho$)
+         \begin{align}
+            a(t) &\propto e^{H_{dS} t} \\
+            \dd{s^2} &= \dd{t^2} - e^{2H_{dS}t} \dd{\pmb{x}^2}
+         \end{align}
+
+\end{itemize}
+
+\paragraph{Cosmological horizons}
+\begin{itemize}
+   \item Particle horizon is the size of the region (in infinite Universe!) causally connected by the time $t$
+      \begin{equation}
+         l_H(t) = a(t) \eta (t) = a(t) \int_0^t \frac{\dd{t'}}{a(t')} =
+         \begin{cases}
+            \frac{2}{H(t)} & \text{matter} \\
+            \frac{1}{H(t)} & \text{radiation}
+         \end{cases}
+      \end{equation}
+   \item Event horizon is the size of the region from which signals emitted as that moment of time will \textit{ever} reach the observer ($\pmb{x} = 0$) in arbitrary distant \textit{future}.
+
+      In de Sitter space, beginning of time shifted to $-\infty$. Thus particle horizon $l_H(t) = \infty$. Instead we define event horizon
+      \begin{equation}
+         l_{dS} = a(t) \left[ \eta(t\rightarrow \infty) - \eta(t) \right]  = a(t) \int_t^\infty \frac{\dd{t'}}{a(t')} = \frac{1}{H_{dS}}
+      \end{equation}
+\end{itemize}
+
+\section{$\Lambda$CDM model}
+There are four components of energy density in the $\Lambda$CDM Universe
+\begin{equation}
+   H^2 = \left( \frac{\dot{a}}{a} \right)^2 = \frac{8\pi}{3} G \left( \rho_M + \rho_{rad} + \rho_\Lambda + \rho_{curv} \right)
+\end{equation}
+by definition
+\begin{equation}
+   \frac{8 \pi}{3} G \rho_{curv} = - \frac{\kappa}{a^2}
+\end{equation}
+
+Critical density (only in application to the present Universe)
+\begin{equation}
+   \rho_c = \frac{3 H_0^2}{8\pi G}
+\end{equation}
+
+Introduce parameter ($\sum_i \Omega_i \equiv 1$ and only to the present Universe)
+\begin{align}
+   \Omega_M &= \frac{\rho_{M, 0}}{\rho_c}=0.315 \\
+   \Omega_{rad} &= \frac{\rho_{rad,0}}{\rho_c} \lessapprox 10^{-4} \\
+   \Omega_{\Lambda} &= \frac{\rho_{\Lambda,0}}{\rho_c} = 0.685\\
+   \Omega_{curv} &= \frac{\rho_{curv,0}}{\rho_c} < 10^{-2}
+\end{align}
+With these
+\begin{equation}
+   H^2 = \left( \frac{\dot{a}}{a} \right)^2 = \frac{8\pi}{3} G \rho_c \left[ \Omega_M \left( \frac{a_0}{a} \right)^3 + \Omega_{rad} \left( \frac{a_0}{a} \right)^4 + \Omega_\Lambda + \Omega_{curv} \left( \frac{a_0}{a} \right)^2 \right] \label{FriedmannOmega}
+\end{equation}
+
+Curvature has never dominated in the evolution of the Universe. Dark energy will eventually dominate, since all other contribution decrease with time.
+
+
+\paragraph{Transition from deceleration to acceleration} (when Dark energy started to dominated)
+
+Use \eqref{FriedmannOmega} to calculate the second derivative and find
+\begin{equation}
+   z_{ac} = \left( \frac{2 \Omega_\Lambda}{\Omega_M} \right)^{1/3} - 1 \approx 0.63
+\end{equation}
+
+\paragraph{Transition from radiation domination to matter domination}
+\begin{equation}
+   z_{eq} + 1 = \frac{a_0}{a_{eq}} - \frac{\Omega_M}{\Omega_{rad}} \sim 10^4 \Rightarrow T_{eq} = \SI{1}{\eV}
+\end{equation}
+Refined calculation (with neutrinos) gives $T_{eq} = \SI{0.8}{\eV}$.
+
+\paragraph{Present age of the Universe}
+Only consider $\Omega_M$ and $\Omega_\Lambda$
+\begin{equation}
+   t_0 = \frac{2}{3\sqrt{\Omega_\Lambda}} \frac{1}{H_0} \arsinh \sqrt{\frac{\Omega_\Lambda}{\Omega_M}} 
+\end{equation}
+
+\section{Thermodynamics of expanding Universe}
+In reaction $A_1 + A_2 + \dots \leftrightarrow B_1 + B_2 + \dots$ with chemical equilirium
+\begin{equation}
+   \sum \mu_{A_i} = \sum \mu_{B_j}
+\end{equation}
+To create photon or destroy photon, there is no threshold energy, thus $\mu_\gamma = 0$. Consider annihilation of electron and positron, then $\mu_{e^-} = - \mu_{e^+}$.
+
+Distributions
+\begin{equation}
+   f(\pmb{p}) = \frac{1}{(2\pi)^3} \frac{1}{\exp[E(\pmb{p}-\mu)/T]  \mp 1} \label{dist}
+\end{equation}
+(boson with minus and fermion with plus sign). Neglecting the $\mp 1$, it reduces to Maxwell-Boltzmann 
+\begin{equation}
+   f(\pmb{p}) = \frac{1}{(2\pi)^3} e^{-(E(\pmb{p})-\mu)/T}
+\end{equation}
+In $m \gg T, (m - \mu) \gg T$
+\begin{equation}
+   f(\pmb{p}) = \frac{1}{(2\pi)^3} e^{(\mu - m)/T} e^{- \pmb{p}^2/(2mT)}
+\end{equation}
+
+Number density $n_i$, energy density $\rho_i$, and pressure $p_i$ are defined as ($p\dd{p} = E \dd{p}$)
+\begin{align}
+   n_i &= g_i \int f(\pmb{p}) \dd[3]{\pmb{p}} = 4\pi g_i \int f(E) \sqrt{E^2 - m_i^2} E \dd{E} \\
+   \rho_i &= g_i \int f(\pmb{p}) E(\pmb{p}) \dd[3]{\pmb{p}} = 4\pi g_i \int f(E) \sqrt{E^2 - m_i^2} E^2 \dd{E} \\
+   p_i &= \frac{4\pi g_i}{3} \int^\infty_0 f(E) (E^2 - m_i^2)^{3/2} \dd{E}
+\end{align}
+
+\paragraph{Relativistic particles} with zero chemical potential $\mu_i = 0$
+\begin{equation}
+   \rho_i = 
+   \begin{cases}
+      g_i \frac{\pi^2}{30} T^4 & \text{Bose} \\
+      \frac{7}{8} g_i \frac{\pi^2}{30} T^4 & \text{Fermi}
+   \end{cases}
+\end{equation}
+To combine all relativistic particles
+\begin{equation}
+   \rho = g_* \frac{\pi^2}{30} T^4
+\end{equation}
+with
+\begin{equation}
+   g_* = \sum_{\text{boson}, m \ll T} g_i + \frac{7}{8} \sum_{\text{fermion}, m \ll T} g_i
+\end{equation}
+From the integrals, we also find $p = \rho / 3$.
+
+Number densities
+\begin{equation}
+   n_i =
+   \begin{cases}
+      g_i \frac{\zeta(3)}{\pi^2} T^3 & \text{Boson} \\
+      \frac{3}{4} g_i \frac{\zeta(3)}{\pi^2} T^3 & \text{Fermi}
+   \end{cases}
+\end{equation}
+
+\paragraph{Non-relativistic particles}
+\begin{align}
+   n_i &= g_i \left( \frac{m_i T}{2\pi} \right)^{3/2} e^{\frac{\mu_i - m_i}{T}} \\
+   \rho_i & m_i n_i + \frac{3}{2} n_i T_i \\
+   p_i & T n_i \ll \rho_i
+\end{align}
+
+\section{Entropy, Baryon-to-Photon ratio}
+\begin{equation}
+   s = \frac{p + \rho -\mu n }{ T} 
+\end{equation}
+
+\paragraph{Relativistic} ($\mu = 0$)
+\begin{equation}
+   s_i = (1; \frac{7}{8}) g_i \frac{2\pi^2}{45} T^3
+\end{equation}
+
+\paragraph{Non-relativistic} particles' entropy is always small in cosmic medium
+\begin{equation}
+   s_i = \frac{5}{2} n_i + \frac{m_i - \mu_i}{T}n_i
+\end{equation}
+
+Total entropy in comoving is conserved
+\begin{equation}
+   \dv{t} (sa^3) = 0
+\end{equation}
+
+\paragraph{Baryon asymmetry} is characterised by
+\begin{equation}
+   \Delta_B =  \frac{n_B - n_{\bar{B}}}{s} = \num{0.86e-10}
+\end{equation}
+It is time-independent, if there is no $B$-violation processes and no large amount of entropy is released.
+
+Baryon-to-photon ratio (applicable at $T \lessapprox \SI{1}{\mega\eV}$)
+\begin{equation}
+   \eta_B = \frac{n_B}{n_\gamma} = (\num{6.05 +- 0.07} )\cdot 10^{-10}
+\end{equation}
+
+For a massless particle with small chemical potential
+\begin{equation}
+   \frac{\Delta_n}{g} = \frac{n - \bar{n}}{g} = (\frac{1}{3}; \frac{1}{6}) \mu T^2
+\end{equation}
+\paragraph{Equilibrium}
+\begin{itemize}
+   \item  Thermal equilibirium
+
+      Two parts of a system could exchange heat energy but they don't on net.
+
+   \item Chemical equilibirium
+
+      Number densities of both sides of process don't change, i.e.~back and forward reactions happen at same rate.
+
+   \item Kinetical equilibirium
+
+      Particles are distributed according to \eqref{dist}.
+\end{itemize}
+
+\section{Recombination}
+As the Universe cools down, it becomes thermodynamically for baryons and electrons to combine into atoms. Sometimes recombination is also understood as the last time photons scattered and propagate freely. In is not equilibirium process!
+
+Naively one would expect $T_{rec} \sim \Delta_H$, but in reality it is a order of magnitude lower! The main deciding factor is the \textit{low abundance} of proton $n_p \approx n_B$. Consider process $p + e \leftrightarrow H + \gamma$. Forward reaction is characterised by $\tau_+ \sim n_B^{-1}$,  backward  by $exp(\Delta_H / T)$. To define the recombination happened with $\tau_+ \sim \tau_-$, we find $T \ll \Delta_H $ with small $n_B$.
+
+\paragraph{Equilibrium approach} three non-rel. Boltzmann distributions $n_e$, $n_p$, $n_H$. There are but unknown chemical potentials, but also three further equations: baryon number conservation, chemical potential in equilibrium, and charge neutrality. In the end, we get Saha equation. Define recombination with $n_p (T^{eq}_r) = n_H(T_r^{eq})$, we have
+\begin{equation}
+   T_r^{eq} \approx \SI{0.38}{\eV}
+\end{equation}
+(With numerical calculation $T_r = \SI{0.33}{\eV}$.)
+
+\paragraph{Photon last scattering} is more important, since after this photons freely propagate and they are CMB photons. Last scattering means scattering off electrons. Thus electron number density is the key information.
+
+Need to consider energy levels of hydrogen atoms. Only consider ionization processes, there is no chemical equilirium for ground state hydrogen, but there is for excited state ($2s, 2p$). This is all because of photon number density capable of ionizing the respective atom. Higher excited levels are not considered, since their number densities are exponentially small.
+
+Three other processes
+\begin{itemize}
+   \item $e+ p \leftrightarrow 1s + \gamma$ 
+     
+      doesn't change electron number density, because the photon release in forward reaction will quickly ionize a neighboring $1s$-atom.
+   \item $2s \leftrightarrow 1s + 2\gamma$
+
+      Backward process is suppressed, because it involves three particles.
+
+   \item $2p \leftrightarrow 1s + \gamma$
+
+      Backward process is also suppressed, because here the redshift because of cosmic expansion is important and photon wavelength gets stretched out.
+\end{itemize}
+
+As stated before, higher level hydrom atoms can be easily ionized, but process of excited hydrogen atoms are more likely to go to $1s$ states without emitting electron. In the end, there is increase in number of $1s$ atoms and decrease in free electron and protons.
+
+After calculation, we find
+\begin{equation}
+   T_r = \SI{0.26}{\eV}
+\end{equation}
+
+\paragraph{Horizon at recombination}
+\begin{equation}
+   l_{H,r}(t_0) = \frac{2}{H_0 \sqrt{\Omega_M}} \frac{f}{\sqrt{1+z_r}}
+\end{equation}
+It gives us that there should be $\sim \num{3e4}$ regions causally disconnected at recombination, so no thermal equilibrium with each oter. But from CMB and galaxy surveys, there is no difference. \textit{Horizon Problem!}
+
+\section{Relic neutrinos}
+\paragraph{Neutrino freeze-out}
+\begin{align}
+   &\sigma_\nu \sim G_F^2 T^2 \\
+   &\Rightarrow \tau_\nu \sim \frac{1}{G_F^2 T^5} \\
+   &\tau_\nu (T) \sim H^{-1}(T)  \\
+   &\Rightarrow T_{v,f} \sim \SI{2}{\mega\eV}
+\end{align}
+
+\paragraph{Effective neutrino temperature}
+Neutrinos remain relativistic and cool down with expansion. There is energy injection into photon because of electron positron annihilation.
+
+From entropy conservation (of electron photon component)
+\begin{equation}
+   g_*^{eq}(T) a^3 T^3 = \text{const}
+\end{equation}
+Then
+\begin{equation}
+   \frac{T_{\gamma, 0}}{T_{\nu, 0}} = \left( \frac{g_*^{eq}(T_{\nu,f})}{g_*^{eq}(T_0)} \right)^{1/3} = \left( \frac{11}{4} \right)^{1/3} \approx 1.4
+\end{equation}
+This can be used to constraint neutrino masses.
+
+\section{Big bang nucleosythesis}
+In chronological order
+
+\paragraph{Neutron freeze-out}
+$p + e \leftrightarrow n + \nu_e$
+
+In naive calculation ($T \gtrapprox \Delta_m, m_e$), we have (with similar approach as neutrino decoupling)
+\begin{equation}
+   T_n \approx \SI{1.4}{\mega\eV} 
+\end{equation}
+In reality it is $T_n \approx \SI{0.75}{\mega\eV}$.
+
+\paragraph{Deuterium production}
+$p+n \Rightarrow D+\gamma$
+
+Saha equation gives
+\begin{equation}
+   T_D = \SI{65}{\kilo\eV}
+\end{equation}
+It is much lower than the binding energy, since the result of Saha equation has a suppression factor
+\begin{equation}
+   \frac{X_D}{X_n} \approx \eta_B \left( \frac{2.5 T}{m_p} \right)^{3/2} e^{\Delta_D / T}
+\end{equation}
+
+\begin{align}
+   \frac{n_n(T_{NS})}{n_p(T_{NS})} &\approx 0.14 \\
+   X_{{}^4 \text{He}} &\approx 25 \%
+\end{align}
+\paragraph{Deuterium burning}
+$D+ D \rightarrow {}^3 \text{He} + n$ $D + D \rightarrow T+ p$
+
+Nucleosythesis begins a bit early than deuterium production, $T_{NS} = \SI{75}{\eV}$. Because the cross sections of deuterium into heavier element are large, once deuterium gets produced it gets immediately turned into heavier nuclei. Until $T_D$, the abundance of deuterium is very small. Nevertheless, BBN dependents on deuterium production, since heavier elements must go through deuterium first. \textit{Deuterium bottleneck!}
+
+Precise calculation involves cross sections, tunneling rates, and Boltzmann equation.
+
+\section{Dark matter}
+Dark matter should be
+\begin{itemize}
+   \item non-relativistic
+   \item very weakly, if at all, interacting with photon
+   \item long-lived
+\end{itemize}
+
+DM is categorised into two (three) depends on the temperature at its freeze-out
+\begin{itemize}
+   \item cold dark matter $T_f < M$
+   \item $T_f > M$
+      \begin{itemize}
+         \item warm dark matter $M \lessapprox \SI{1}{\eV}$
+         \item hot dark matter $m \gtrapprox \SI{1}{\eV}$
+      \end{itemize}
+\end{itemize}
+$\SI{1}{\eV}$ is the temeperature of transition from radiation to matter domination!
+
+CDM is preferred.
+
+\paragraph{Boltzmann equation}
+\begin{equation}
+   \dd{n_X}{t} + 3 Hn_X = - \expval{\sigma^{ann}\cdot v} (n_X^2 - n^{eq\; 2}_X)
+\end{equation}
+
+Partial wave analysis
+\begin{equation}
+   \expval{\sigma^{ann}\cdot v} = \sigma_0 + 6 \frac{T}{M_X} \sigma_1
+\end{equation}
+
+\begin{align}
+   T_f &\approx \propto M_X \\
+   \Omega_X &\propto \expval{\sigma \cdot v}^{-1} \\
+       &\propto \ln M_x
+\end{align}
+
+\paragraph{WIMP}
+Assume $M_x = \SI{100}{\giga \eV}$ and use $\Omega_X = 0.25$, then
+\begin{equation}
+   \expval{\sigma \cdot v} \sim \SI{1e-8}{\giga\eV\tothe{-2}}
+\end{equation}
+Somewhat similar to electroweak coupling! \textit{WIMP miracle!}
+\end{document} 
