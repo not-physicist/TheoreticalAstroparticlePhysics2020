@@ -52,7 +52,7 @@ Gravitational constant
 
 Current value of Hubble parameter
 \begin{equation}
-   H_0 = \SI{70.5 +- 1.3}{\km \s\tothe{-1} \mega\parsec\tothe{-1}}
+   H_0 = \SI{70.5 +- 1.3}{\km \s\tothe{-1} \mega\parsec\tothe{-1}} = h_0 \cdot \SI{100}{\km \s\tothe{-1} \mega\parsec\tothe{-1}}
 \end{equation}
 
 \begin{equation}
@@ -65,7 +65,7 @@ CMB temerature
 \end{equation}
 
 \section{Homogeneous isotropic Universe}
-FLRW metric
+\paragraph{FLRW metric}
 \begin{equation}
    \dd{s^2} = \dd{t^2} - a^2(t) \gamma_{ij} \dd{x^i} \dd{x^j}
 \end{equation}
@@ -76,14 +76,14 @@ with
    \kappa = 0: \quad \gamma_{ij} \dd{x^i} \dd{x^j} &= (\dd{x^1})^2  + (\dd{x^2})^2 + (\dd{x^3})^2
 \end{align}
 
-This metric is in the comoving frame, meaning that space is the same everywhere at each moment of time and world lines of particles which are at rest with respect to this frame are geodesic. Observer in this frame moves along with expansio and perceives the Universe to be isotropic. Observer in this frame moves along with expansio and perceives the Universe to be isotropic.
+\paragraph{Comoving frame}, meaning that space is the same everywhere at each moment of time and world lines of particles which are at rest with respect to this frame are geodesic. Observer in this frame moves along with expansion and perceives the Universe to be isotropic. 
 
-Hubble parameter
+\paragraph{Hubble parameter} characterises the expansion rate
 \begin{equation}
    H(t) = \frac{\dot a(t)}{a(t)}
 \end{equation}
 
-Conformal coordinates
+\paragraph{Conformal coordinates}
 \begin{align}
    \dd{t} &= a \dd{\eta} \Rightarrow \eta = \int \frac{\dd{t}}{a(t)}\\
    \dd{s^2} &= a^2(\eta) \eta_{\mu\nu} \dd{x^\mu} \dd{x^\nu}
@@ -93,7 +93,7 @@ In theories of massless vector fields, the action in conformal coordinates $(\et
    \pmb{p} (t) = \frac{\pmb{k}}{a(t)}
 \end{equation}
 
-Redshift
+\paragraph{Redshift}
 \begin{equation}
    \lambda_0 = \lambda_i \frac{a_0}{a(t_i)} = \lambda_i \left[  1 + z(t_i) \right]
 \end{equation}
@@ -107,13 +107,13 @@ Slowing down of relative motion
    \pmb{p} = \frac{\pmb{k}}{a(t)}
 \end{equation}
 
-Gases of free particles in expanding Universe
+\paragraph{Gases of free particles} in expanding Universe
 \begin{itemize}
    \item relativistic
       \begin{equation}
          T_\eff \propto \frac{1}{a(t)}
       \end{equation}
-      since $\exp^{p/T}$ appears in the denominator of distribution $f(\pmb{p})$.
+      since $\exp(p/T)$ appears in the denominator of distribution $f(\pmb{p})$.
    \item non-relativistic
       \begin{equation}
          T_\eff \propto \frac{1}{a^2(t)}
@@ -168,9 +168,9 @@ with $\omega = 0$ for non-relativistic particles, $\omega=1/3$ for relativistic 
       Hubble parameter
       \begin{align}
          H(t) &= \frac{1}{2t} \\
-         H(T) &= \frac{T^2}{M^*_{pl}} = \frac{1.66 \sqrt{g^*}T^2}{M_{pl}}
+         H(T) &= \frac{T^2}{M^*_{pl}} = \frac{1.66 \sqrt{g_*}T^2}{M_{pl}}
       \end{align}
-      where $g_*$ is defined as
+      where $g_*$ is defined as (normally we have $(T_i/T)^4$)
       \begin{equation}
          g_* = \sum_b g_b + \frac{7}{8} \sum_f g_f
       \end{equation}
@@ -183,14 +183,23 @@ with $\omega = 0$ for non-relativistic particles, $\omega=1/3$ for relativistic 
 
 \end{itemize}
 
+\paragraph{Age of the Universe} numerically
+From relation between temperature and scalar factor (for relativistic particles), we know
+\begin{equation}
+   \frac{\dd{a}}{a} = - \frac{\dd{T}}{T} 
+\end{equation}
+Then
+\begin{equation}
+   t(T) = \frac{1}{H_0} \int_T^\infty \frac{\dd{T'}}{T'} \left[ \Omega_M \left( \frac{T'}{T_0} \right)^3 + \Omega_{rad} \left( \frac{T'}{T_0} \right)^4 + \Omega_{\Lambda} + \Omega_{curv} \left( \frac{T'}{T_0} \right)^2 \right]^{-1/2}
+\end{equation}
 \paragraph{Cosmological horizons}
 \begin{itemize}
    \item Particle horizon is the size of the region (in infinite Universe!) causally connected by the time $t$
       \begin{equation}
          l_H(t) = a(t) \eta (t) = a(t) \int_0^t \frac{\dd{t'}}{a(t')} =
          \begin{cases}
-            \frac{2}{H(t)} & \text{matter} \\
-            \frac{1}{H(t)} & \text{radiation}
+            \frac{1}{H(t)} & \text{radiation} \\
+            \frac{2}{H(t)} & \text{matter}
          \end{cases}
       \end{equation}
    \item Event horizon is the size of the region from which signals emitted as that moment of time will \textit{ever} reach the observer ($\pmb{x} = 0$) in arbitrary distant \textit{future}.
@@ -211,14 +220,16 @@ by definition
    \frac{8 \pi}{3} G \rho_{curv} = - \frac{\kappa}{a^2}
 \end{equation}
 
-Critical density (only in application to the present Universe)
+\paragraph{Critical density} (only in application to the present Universe)
 \begin{equation}
    \rho_c = \frac{3 H_0^2}{8\pi G}
 \end{equation}
 
 Introduce parameter ($\sum_i \Omega_i \equiv 1$ and only to the present Universe)
 \begin{align}
-   \Omega_M &= \frac{\rho_{M, 0}}{\rho_c}=0.315 \\
+   \Omega_M &= \frac{\rho_{M, 0}}{\rho_c}=0.315 =\Omega_B + \Omega_{DM} \\
+   \Omega_B &= 0.050 \\
+   \Omega_{DM} &= 0.265 \\
    \Omega_{rad} &= \frac{\rho_{rad,0}}{\rho_c} \lessapprox 10^{-4} \\
    \Omega_{\Lambda} &= \frac{\rho_{\Lambda,0}}{\rho_c} = 0.685\\
    \Omega_{curv} &= \frac{\rho_{curv,0}}{\rho_c} < 10^{-2}
@@ -230,7 +241,6 @@ With these
 
 Curvature has never dominated in the evolution of the Universe. Dark energy will eventually dominate, since all other contribution decrease with time.
 
-
 \paragraph{Transition from deceleration to acceleration} (when Dark energy started to dominated)
 
 Use \eqref{FriedmannOmega} to calculate the second derivative and find
@@ -240,7 +250,7 @@ Use \eqref{FriedmannOmega} to calculate the second derivative and find
 
 \paragraph{Transition from radiation domination to matter domination}
 \begin{equation}
-   z_{eq} + 1 = \frac{a_0}{a_{eq}} - \frac{\Omega_M}{\Omega_{rad}} \sim 10^4 \Rightarrow T_{eq} = \SI{1}{\eV}
+   z_{eq} + 1 = \frac{a_0}{a_{eq}} \sim \frac{\Omega_M}{\Omega_{rad}} \sim 10^4 \Rightarrow T_{eq} = \SI{1}{\eV}
 \end{equation}
 Refined calculation (with neutrinos) gives $T_{eq} = \SI{0.8}{\eV}$.
 
@@ -259,7 +269,7 @@ To create photon or destroy photon, there is no threshold energy, thus $\mu_\gam
 
 Distributions
 \begin{equation}
-   f(\pmb{p}) = \frac{1}{(2\pi)^3} \frac{1}{\exp[E(\pmb{p}-\mu)/T]  \mp 1} \label{dist}
+   f(\pmb{p}) = \frac{1}{(2\pi)^3} \frac{1}{\exp[(E(\pmb{p})-\mu)/T]  \mp 1} \label{dist}
 \end{equation}
 (boson with minus and fermion with plus sign). Neglecting the $\mp 1$, it reduces to Maxwell-Boltzmann 
 \begin{equation}
@@ -307,8 +317,8 @@ Number densities
 \paragraph{Non-relativistic particles}
 \begin{align}
    n_i &= g_i \left( \frac{m_i T}{2\pi} \right)^{3/2} e^{\frac{\mu_i - m_i}{T}} \\
-   \rho_i & m_i n_i + \frac{3}{2} n_i T_i \\
-   p_i & T n_i \ll \rho_i
+   \rho_i &= m_i n_i + \frac{3}{2} n_i T_i \\
+   p_i &= T n_i \ll \rho_i
 \end{align}
 
 \section{Entropy, Baryon-to-Photon ratio}
@@ -326,7 +336,7 @@ Number densities
    s_i = \frac{5}{2} n_i + \frac{m_i - \mu_i}{T}n_i
 \end{equation}
 
-Total entropy in comoving is conserved
+Total entropy in comoving volumne is conserved
 \begin{equation}
    \dv{t} (sa^3) = 0
 \end{equation}
@@ -344,7 +354,7 @@ Baryon-to-photon ratio (applicable at $T \lessapprox \SI{1}{\mega\eV}$)
 
 For a massless particle with small chemical potential
 \begin{equation}
-   \frac{\Delta_n}{g} = \frac{n - \bar{n}}{g} = (\frac{1}{3}; \frac{1}{6}) \mu T^2
+   \frac{\Delta n}{g} = \frac{n - \bar{n}}{g} = (\frac{1}{3}; \frac{1}{6}) \mu T^2
 \end{equation}
 \paragraph{Equilibrium}
 \begin{itemize}
@@ -454,9 +464,9 @@ It is much lower than the binding energy, since the result of Saha equation has 
    X_{{}^4 \text{He}} &\approx 25 \%
 \end{align}
 \paragraph{Deuterium burning}
-$D+ D \rightarrow {}^3 \text{He} + n$ $D + D \rightarrow T+ p$
+$D+ D \rightarrow {}^3 \text{He} + n$, $D + D \rightarrow T+ p$
 
-Nucleosythesis begins a bit early than deuterium production, $T_{NS} = \SI{75}{\eV}$. Because the cross sections of deuterium into heavier element are large, once deuterium gets produced it gets immediately turned into heavier nuclei. Until $T_D$, the abundance of deuterium is very small. Nevertheless, BBN dependents on deuterium production, since heavier elements must go through deuterium first. \textit{Deuterium bottleneck!}
+Nucleosythesis begins a bit early than deuterium production, $T_{NS} = \SI{75}{\eV}$. Because the cross sections of deuterium into heavier element are large, once deuterium gets produced it gets immediately turned into heavier nuclei. Until $T_D$, the abundance of deuterium is very small. Nevertheless, BBN dependents on deuterium production, since heavier elements must go through deuterium first. Also deuterium has quite low binding energy. This means that it can be easily dissociate by thermal photons. Thus BBN is delayed because of deuterium's low binding energy. \textit{Deuterium bottleneck!}
 
 Precise calculation involves cross sections, tunneling rates, and Boltzmann equation.
 
@@ -483,7 +493,7 @@ CDM is preferred.
 
 \paragraph{Boltzmann equation}
 \begin{equation}
-   \dd{n_X}{t} + 3 Hn_X = - \expval{\sigma^{ann}\cdot v} (n_X^2 - n^{eq\; 2}_X)
+   \dv{n_X}{t} + 3 Hn_X = - \expval{\sigma^{ann}\cdot v} (n_X^2 - n^{eq\; 2}_X)
 \end{equation}
 
 Partial wave analysis
