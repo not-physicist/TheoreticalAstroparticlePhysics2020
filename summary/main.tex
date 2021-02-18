@@ -35,7 +35,7 @@
 \newcommand{\npnn}{\frac{n_p(T_{NS})}{n_n(T_{NS})}}
 \newcommand{\nnnp}{\frac{n_n(T_{NS})}{n_p(T_{NS})}}
 
-\title{Theoretical Astroparticle Physik \\ Notes and summary}
+\title{Theoretical Astroparticle Physics \\ Notes and summary}
 \date{\today}
 \author{Chenhuan Wang}
 \begin{document}
@@ -59,7 +59,7 @@ Current value of Hubble parameter
    \SI{1}{\year} \approx \pi \cdot 10^7 \si{\s}
 \end{equation}
 
-CMB temerature
+CMB temperature
 \begin{equation}
    T_0 = \SI{2.726 +- 0.001}{\kelvin}
 \end{equation}
@@ -76,7 +76,7 @@ with
    \kappa = 0: \quad \gamma_{ij} \dd{x^i} \dd{x^j} &= (\dd{x^1})^2  + (\dd{x^2})^2 + (\dd{x^3})^2
 \end{align}
 
-\paragraph{Comoving frame}, meaning that space is the same everywhere at each moment of time and world lines of particles which are at rest with respect to this frame are geodesic. Observer in this frame moves along with expansion and perceives the Universe to be isotropic. 
+\paragraph{Comoving frame} is the frame where the space is the same everywhere at each moment of time and world lines of particles which are at rest with respect to this frame are geodesic. Observer in this frame moves along with expansion and perceives the Universe to be isotropic. 
 
 \paragraph{Hubble parameter} characterises the expansion rate
 \begin{equation}
@@ -107,7 +107,7 @@ Slowing down of relative motion
    \pmb{p} = \frac{\pmb{k}}{a(t)}
 \end{equation}
 
-\paragraph{Gases of free particles} in expanding Universe
+\paragraph{Gases of free particles} in expanding Universe. Note temperature refers to photon temperature
 \begin{itemize}
    \item relativistic
       \begin{equation}
@@ -141,7 +141,7 @@ Slowing down of relative motion
 \end{equation}
 with $\omega = 0$ for non-relativistic particles, $\omega=1/3$ for relativistic particles, and $\omega = -1$ for vacuum.
 
-\paragraph{Sample comsmological solutions} with zero curvature ($\kappa = 0$)
+\paragraph{Sample cosmological solutions} with zero curvature ($\kappa = 0$)
 \begin{itemize}
    \item matter dominated Universe 
 
@@ -178,19 +178,19 @@ with $\omega = 0$ for non-relativistic particles, $\omega=1/3$ for relativistic 
    \item vacuum dominated (de Sitter space, $p = -\rho$)
          \begin{align}
             a(t) &\propto e^{H_{dS} t} \\
-            \dd{s^2} &= \dd{t^2} - e^{2H_{dS}t} \dd{\pmb{x}^2}
+				\dd{s^2} &= \dd{t^2} - e^{2H_{dS}t} \dd{x^2}
          \end{align}
 
 \end{itemize}
 
-\paragraph{Age of the Universe} numerically
-From relation between temperature and scalar factor (for relativistic particles), we know
+\paragraph{Age of the Universe}
+Since temperature is inversely proportional to scale factor
 \begin{equation}
    \frac{\dd{a}}{a} = - \frac{\dd{T}}{T} 
 \end{equation}
 Then
 \begin{equation}
-   t(T) = \frac{1}{H_0} \int_T^\infty \frac{\dd{T'}}{T'} \left[ \Omega_M \left( \frac{T'}{T_0} \right)^3 + \Omega_{rad} \left( \frac{T'}{T_0} \right)^4 + \Omega_{\Lambda} + \Omega_{curv} \left( \frac{T'}{T_0} \right)^2 \right]^{-1/2}
+	t(T) = \frac{1}{H_0} \int_T^\infty \frac{\dd{T'}}{T'} \left[ \Omega_\text{M} \left( \frac{T'}{T_0} \right)^3 + \Omega_\text{rad} \left( \frac{T'}{T_0} \right)^4 + \Omega_{\Lambda} + \Omega_\text{curv} \left( \frac{T'}{T_0} \right)^2 \right]^{-1/2}
 \end{equation}
 \paragraph{Cosmological horizons}
 \begin{itemize}
@@ -220,7 +220,7 @@ by definition
    \frac{8 \pi}{3} G \rho_{curv} = - \frac{\kappa}{a^2}
 \end{equation}
 
-\paragraph{Critical density} (only in application to the present Universe)
+\paragraph{Critical density} 
 \begin{equation}
    \rho_c = \frac{3 H_0^2}{8\pi G}
 \end{equation}
@@ -255,13 +255,13 @@ Use \eqref{FriedmannOmega} to calculate the second derivative and find
 Refined calculation (with neutrinos) gives $T_{eq} = \SI{0.8}{\eV}$.
 
 \paragraph{Present age of the Universe}
-Only consider $\Omega_M$ and $\Omega_\Lambda$
+with only $\Omega_M$ and $\Omega_\Lambda$
 \begin{equation}
    t_0 = \frac{2}{3\sqrt{\Omega_\Lambda}} \frac{1}{H_0} \arsinh \sqrt{\frac{\Omega_\Lambda}{\Omega_M}} 
 \end{equation}
 
 \section{Thermodynamics of expanding Universe}
-In reaction $A_1 + A_2 + \dots \leftrightarrow B_1 + B_2 + \dots$ with chemical equilirium
+In reaction $A_1 + A_2 + \dots \leftrightarrow B_1 + B_2 + \dots$ with chemical equilibrium
 \begin{equation}
    \sum \mu_{A_i} = \sum \mu_{B_j}
 \end{equation}
@@ -275,7 +275,7 @@ Distributions
 \begin{equation}
    f(\pmb{p}) = \frac{1}{(2\pi)^3} e^{-(E(\pmb{p})-\mu)/T}
 \end{equation}
-In $m \gg T, (m - \mu) \gg T$
+In non-relativistic limit ($m \gg T, (m - \mu) \gg T$)
 \begin{equation}
    f(\pmb{p}) = \frac{1}{(2\pi)^3} e^{(\mu - m)/T} e^{- \pmb{p}^2/(2mT)}
 \end{equation}
@@ -336,7 +336,7 @@ Number densities
    s_i = \frac{5}{2} n_i + \frac{m_i - \mu_i}{T}n_i
 \end{equation}
 
-Total entropy in comoving volumne is conserved
+Total entropy in comoving volume is conserved
 \begin{equation}
    \dv{t} (sa^3) = 0
 \end{equation}
@@ -345,7 +345,7 @@ Total entropy in comoving volumne is conserved
 \begin{equation}
    \Delta_B =  \frac{n_B - n_{\bar{B}}}{s} = \num{0.86e-10}
 \end{equation}
-It is time-independent, if there is no $B$-violation processes and no large amount of entropy is released.
+It is time-independent, if there are no $B$-violation processes and no large amount of entropy is released.
 
 Baryon-to-photon ratio (applicable at $T \lessapprox \SI{1}{\mega\eV}$)
 \begin{equation}
@@ -358,15 +358,15 @@ For a massless particle with small chemical potential
 \end{equation}
 \paragraph{Equilibrium}
 \begin{itemize}
-   \item  Thermal equilibirium
+   \item  Thermal equilibrium
 
       Two parts of a system could exchange heat energy but they don't on net.
 
-   \item Chemical equilibirium
+   \item Chemical equilibrium
 
       Number densities of both sides of process don't change, i.e.~back and forward reactions happen at same rate.
 
-   \item Kinetical equilibirium
+   \item Kinetic equilibrium
 
       Particles are distributed according to \eqref{dist}.
 \end{itemize}
@@ -374,7 +374,7 @@ For a massless particle with small chemical potential
 \section{Recombination}
 As the Universe cools down, it becomes thermodynamically for baryons and electrons to combine into atoms. Sometimes recombination is also understood as the last time photons scattered and propagate freely. In is not equilibirium process!
 
-Naively one would expect $T_{rec} \sim \Delta_H$, but in reality it is a order of magnitude lower! The main deciding factor is the \textit{low abundance} of proton $n_p \approx n_B$. Consider process $p + e \leftrightarrow H + \gamma$. Forward reaction is characterised by $\tau_+ \sim n_B^{-1}$,  backward  by $exp(\Delta_H / T)$. To define the recombination happened with $\tau_+ \sim \tau_-$, we find $T \ll \Delta_H $ with small $n_B$.
+Naively one would expect $T_{rec} \sim \Delta_H$, but in reality it is a order of magnitude lower! The main deciding factor is the \textit{low abundance} of proton $n_p \approx n_B$. Consider process $p + e \leftrightarrow H + \gamma$. Forward reaction is characterised by $\tau_+ \sim n_B^{-1}$,  backward  by $\tau_- \sim \exp(\Delta_H / T)$. To define the recombination happened with $\tau_+ \sim \tau_-$, we find $T_\text{rec} \ll \Delta_H $ with small $n_B$.
 
 \paragraph{Equilibrium approach} three non-rel. Boltzmann distributions $n_e$, $n_p$, $n_H$. There are but unknown chemical potentials, but also three further equations: baryon number conservation, chemical potential in equilibrium, and charge neutrality. In the end, we get Saha equation. Define recombination with $n_p (T^{eq}_r) = n_H(T_r^{eq})$, we have
 \begin{equation}
@@ -411,29 +411,31 @@ After calculation, we find
 \begin{equation}
    l_{H,r}(t_0) = \frac{2}{H_0 \sqrt{\Omega_M}} \frac{f}{\sqrt{1+z_r}}
 \end{equation}
-It gives us that there should be $\sim \num{3e4}$ regions causally disconnected at recombination, so no thermal equilibrium with each oter. But from CMB and galaxy surveys, there is no difference. \textit{Horizon Problem!}
+It gives us that there should be $\sim \num{3e4}$ regions causally disconnected at recombination, so no thermal equilibrium with each other. But from CMB and galaxy surveys, there is no difference. \textit{Horizon Problem!}
 
 \section{Relic neutrinos}
-\paragraph{Neutrino freeze-out}
+\paragraph{Neutrino freeze-out} temeperature can be determined by the naive approximation
 \begin{align}
-   &\sigma_\nu \sim G_F^2 T^2 \\
-   &\Rightarrow \tau_\nu \sim \frac{1}{G_F^2 T^5} \\
-   &\tau_\nu (T) \sim H^{-1}(T)  \\
+   &\sigma_\nu \sim G_F^2 T^2 \notag \\
+   &\Rightarrow \tau_\nu \sim \frac{1}{G_F^2 T^5} \notag \\
+   &\tau_\nu (T) \sim H^{-1}(T)  \notag\\
    &\Rightarrow T_{v,f} \sim \SI{2}{\mega\eV}
 \end{align}
+i.e.~earlier than photon last scattering.
 
 \paragraph{Effective neutrino temperature}
 Neutrinos remain relativistic and cool down with expansion. There is energy injection into photon because of electron positron annihilation.
 
 From entropy conservation (of electron photon component)
 \begin{equation}
-   g_*^{eq}(T) a^3 T^3 = \text{const}
+   g_*^{eq}(T) a^3 T^3 = \text{const.}
 \end{equation}
-Then
+Then present neutrino temperature is
 \begin{equation}
    \frac{T_{\gamma, 0}}{T_{\nu, 0}} = \left( \frac{g_*^{eq}(T_{\nu,f})}{g_*^{eq}(T_0)} \right)^{1/3} = \left( \frac{11}{4} \right)^{1/3} \approx 1.4
 \end{equation}
-This can be used to constraint neutrino masses.
+It is lower than the photon temperature. Since electron-positron decouple after neutrino decoupling, the photon component get energy injected by the annihilation.
+This temperature can be used to constraint neutrino masses.
 
 \section{Big bang nucleosythesis}
 In chronological order
